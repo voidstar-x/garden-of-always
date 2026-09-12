@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1E2A44">
+<title>The Garden of Always</title>
+<meta name="description" content="A private garden, told in six movements.">
+<noscript><style>.rv,.coords,.season,.risesun,.risecard .l1,.risecard .l2{opacity:1!important;transform:none!important}
+/* ================= MOBILE-FIRST LAYER (iPhone 17 tuned, v3) ================= */
+:root{--sab:env(safe-area-inset-bottom,0px);--sat:env(safe-area-inset-top,0px)}
+html{font-size:16px}
+.scene{padding:calc(9vh + var(--sat)) 7vw calc(6vh + var(--sab));min-height:100vh;min-height:100dvh;min-height:100svh}
+/* — Typography: readable at arm's length, poem-first — */
+#prologue h1{font-size:clamp(2.1rem,8.6vw,3rem)!important;line-height:1.15}
+#prologue .rv{font-size:clamp(1.05rem,4.4vw,1.3rem)!important;letter-spacing:.02em!important}
+#m1 .skychart{width:min(94vw,760px);height:auto;display:block;margin:0 auto;position:relative}
+#m1 .skychart .bright{opacity:0;transition:opacity 1.2s ease 2.2s}
+#m1.live .skychart .bright{opacity:1}
+#m1 .venus{transition-delay:3s}
+#m1 .skylabel{font-family:var(--sans);font-size:30px;letter-spacing:.08em;fill:#F2EAD3;opacity:0;transition:opacity 1.8s ease 2.8s}
+#m1.live .skylabel{opacity:.96}
+#m1 .coords{font-size:clamp(1rem,4.2vw,1.25rem)!important;letter-spacing:.34em!important}
+#m2 .tapcard{font-size:clamp(1.02rem,4vw,1.3rem)!important;letter-spacing:.2em!important;padding:1.2rem 1.6rem!important;max-width:86vw}
+#m2 .hint,#m3 .sealab,#m5 .tulipcap{font-size:clamp(.85rem,3.6vw,1.05rem)!important;letter-spacing:.2em!important}
+#m3 .rainlab{font-size:clamp(1.3rem,5.6vw,1.7rem)!important;line-height:1.3}
+#m5 .say{font-size:clamp(1.02rem,4.4vw,1.25rem)!important;width:min(78vw,19rem)!important}
+#m6 .risecard .l1{font-size:clamp(1.5rem,6.4vw,2rem)!important}
+#m6 .risecard .l2{font-size:clamp(3rem,13vw,4.6rem)!important}
+/* — Portrait composition: tall sky, generous garden, big actors — */
+#m2 .field{height:44vh;min-height:220px}
+#m2 .soil{height:11vh;min-height:64px}
+#m5 .frostbed{height:46vh;min-height:240px}
+#m5 .bud{width:118px;height:210px;bottom:calc(46vh - 12px)}
+#m5 .bud .say{bottom:118%;padding:1rem 1.1rem}
+#m1 svg .st{filter:none}
+#m1 .sun{width:clamp(72px,17vw,96px)!important;height:clamp(72px,17vw,96px)!important}
+.film-frame{aspect-ratio:9/14;max-height:52vh;max-width:78vw;margin:0 auto}
+/* — Sunflower scale-up for portrait (inline widths are desktop-tuned) — */
+.sfart{transform-origin:50% 100%}
+@media (max-width:480px){
+          #m3 svg.sfart[style*="width:130px"]{width:150px!important;left:8%!important}
+  #m3 svg.sfart[style*="width:120px"]{width:138px!important;left:72%!important}
+  #m3 svg.sfart[style*="width:56px"]{width:76px!important;left:24%!important}
+  #m3 svg.sfart[style*="width:50px"]{width:66px!important;left:60%!important}
+  #m3 .sfart{bottom:6vh}
+  }
+/* — Tap targets ≥44px & thumb-reachable — */
+#m5 .bud{padding:6px}
+#m5 .bud::after{content:'';position:absolute;inset:-14px}
+/* — respects home-bar indicator — */
+footer.endpaper{padding-bottom:calc(1.4rem + var(--sab))!important}
+#m1 .hint{font-size:clamp(.95rem,3.6vw,1.2rem)!important;letter-spacing:.22em!important;color:#C7CEDC!important;text-shadow:0 1px 6px rgba(10,16,32,.9)!important}
+</style></noscript>
+<style>
+:root{
+--blush:#F6C9D0;--petal:#E8A0B4;--babyblue:#BFD9EA;--dusk:#7FA8C9;
+--gold:#F2C14E;--amber:#E09B2D;--green:#9CB888;--leaf:#5F7A57;
+--night:#1E2A44;--star:#F4EFE6;--paper:#FBF7F0;--ink:#3A3F4A;
+--serif:Georgia,'Times New Roman',serif;--sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+/* FAIL-OPEN: without JS (chat-app previews, mobile file viewers), everything renders visible and static. JS adds html.js to re-enable the full animated experience. */
+html:not(.js) .rv,
+html:not(.js) #m1 .const circle,
+html:not(.js) #m1 .skylabel,
+html:not(.js) #m1 .skychart .bright,
+html:not(.js) .coords,
+html:not(.js) #m3 .season,
+html:not(.js) #m5 .bud .say,
+html:not(.js) #m6 .risesun,
+html:not(.js) .risecard .l1,
+html:not(.js) .risecard .l2{opacity:1!important;transform:none!important}
+/* === ALWAYS-ALIVE ART LAYER (v2): ambient life + real illustration, safe on old Safari === */
+@keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes sway{0%,100%{transform:rotate(-2.4deg)}50%{transform:rotate(2.4deg)}}
+@keyframes sway2{0%,100%{transform:rotate(2deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-3px)}}
+#m1 .st{animation:twinkle 3.6s ease-in-out infinite}
+#m1 .st:nth-child(3n){animation-duration:5.2s;animation-delay:.7s}
+#m1 .st:nth-child(4n){animation-duration:4.4s;animation-delay:1.3s}
+.sfart{position:absolute;bottom:0;transform-origin:50% 100%;animation:sway 5.5s ease-in-out infinite}
+.sfart.s2{animation:sway2 6.5s ease-in-out infinite}
+.sfart.s3{animation:sway 7.2s ease-in-out infinite;animation-delay:1.1s}
+@media (prefers-reduced-motion:reduce){#m1 .st,.sfart{animation:none!important}}
+.tulipb{transform-origin:48px 72px;transform:scale(0);transition:transform 1.4s cubic-bezier(.2,1.4,.4,1)}
+.bud.opened .tulipb{transform:scale(1)}
+.bud.opened .budcase{opacity:0;transition:opacity .9s ease}
+.bud .budcase{transition:opacity .9s ease}
+/* ================= TOUCH SYSTEM (v4): whole-page touch optimisation ================= */
+/* 1) No double-tap zoom delay, no accidental pinch inside scenes; scrolling stays native */
+html{-webkit-tap-highlight-color:rgba(242,193,78,.18);touch-action:pan-y;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* NOTE: sky keeps native pan (scroll must survive); only the SUN is a drag surface */
+/* 2) Every tappable gets pressed-state feedback (replaces hover-only affordance) */
+#m5 .bud:hover{transform:scale(1.05)}
+#m5 .bud:active{transform:scale(.94)}
+#m2 .tapcard:active{transform:scale(.97)}
+#m1 .sun:active{cursor:grabbing;filter:brightness(1.12)}
+#m1 .grabbing{cursor:grabbing;filter:brightness(1.12)}
+/* 3) m2: entire garden band is the plant surface (sky area taps do nothing but scroll) */
+#m2{touch-action:manipulation}
+#m2 .field,#m2 .soil{touch-action:manipulation}
+#m2 svg.plant{pointer-events:none}
+/* 4) m5: buds keep fat invisible hit rings; card never intercepts */
+#m5 .bud{touch-action:manipulation}
+#m5 .bud::after{content:'';position:absolute;inset:-16px}
+#m5 .bud .say{pointer-events:none}
+/* 5) scene tap affordance: nothing on the page relies on hover to reveal */
+@media (hover:none){
+  #m5 .bud{transform:none}
+  #m1 .sun{bottom:20%}
+}
+/* 6) iOS momentum + no bounce artifacts inside scenes */
+#m1,#m2,#m3,#m4,#m5,#m6{overscroll-behavior:contain}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);overflow-x:hidden}
+h1{font-weight:400;font-size:clamp(1.9rem,5.5vw,3.1rem);letter-spacing:.05em;line-height:1.3}
+.scene{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7vh 6vw;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.line{font-size:clamp(1.3rem,3.4vw,2.1rem);line-height:1.55;letter-spacing:.02em}
+.hint{position:absolute;bottom:4vh;left:0;right:0;font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;opacity:.5}
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1.5s ease,transform 1.5s ease}
+.live .rv{opacity:1;transform:none}
+.d1{transition-delay:.6s}.d2{transition-delay:1.3s}.d3{transition-delay:2.2s}.d4{transition-delay:3.1s}
+.wash{position:absolute;pointer-events:none;border-radius:50%}
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.04;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>")}
+.film-slot{width:min(80vw,600px);padding:9px;border:1px solid rgba(58,63,74,.4);outline:1px solid rgba(58,63,74,.18);outline-offset:6px;background:rgba(251,247,240,.65)}
+.film-frame{aspect-ratio:16/9;background:var(--night);display:flex;align-items:center;justify-content:center}
+.film-star{width:9px;height:9px;border-radius:50%;background:var(--star);box-shadow:30px -10px 0 -3px var(--star),-34px 8px 0 -3.5px var(--star),6px 16px 0 -4px var(--star)}
+.endpaper{background:var(--paper);text-align:center;padding:9vh 6vw 11vh}
+.endpaper p{font-family:var(--sans);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;opacity:.7}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.rv{opacity:1;transform:none}
+html{scroll-behavior:auto}
+}
+/* MOVEMENT I: NIGHT SKY */
+#m1{background:var(--night)}
+#m1 .sky{position:absolute;inset:0}
+#m1 .sky-dawn{position:absolute;inset:0;background:var(--dusk);opacity:var(--dawn,0);transition:opacity 1.2s ease}
+#m1 svg{position:absolute;inset:0;width:100%;height:100%}
+#m1 .st{fill:var(--star);animation:tw 3.2s ease-in-out infinite}
+#m1 .st:nth-child(2n){animation-delay:1.1s}#m1 .st:nth-child(3n){animation-delay:2s}
+@keyframes tw{0%,100%{opacity:.35}50%{opacity:1}}
+#m1 .const path{fill:none;stroke:var(--star);stroke-width:2.2;opacity:.55;stroke-dasharray:640;stroke-dashoffset:640;transition:stroke-dashoffset 4.5s ease .8s}
+#m1.live .const path{stroke-dashoffset:0}
+#m1 .const circle{fill:var(--star);opacity:0;transition:opacity .8s ease}
+#m1.live .const circle{opacity:.9}
+#m1 .skychart{width:min(94vw,760px);height:auto;display:block;margin:0 auto;position:relative}
+#m1 .skychart .bright{opacity:0;transition:opacity 1.2s ease 2.2s}
+#m1.live .skychart .bright{opacity:1}
+#m1 .venus{transition-delay:3s}
+#m1 .skylabel{font-family:var(--sans);font-size:30px;letter-spacing:.08em;fill:#F2EAD3;opacity:0;transition:opacity 1.8s ease 2.8s}
+#m1.live .skylabel{opacity:.96}
+#m1 .coords{position:relative;font-family:var(--sans);font-size:clamp(1.05rem,3.4vw,1.3rem);letter-spacing:.3em;color:#F2EAD3;opacity:0;transition:opacity 2s ease 3.4s;text-shadow:0 1px 8px rgba(10,16,32,.8)}
+#m1.live .coords{opacity:.85}
+#m1 .sun{position:absolute;left:18%;bottom:24%;width:clamp(54px,9vw,86px);height:clamp(54px,9vw,86px);border-radius:50%;background:var(--gold);box-shadow:0 0 46px 10px rgba(242,193,78,.45);opacity:calc(.34 + var(--dawn,0)*.66);transform:translateY(calc((1 - var(--dawn,0))*5vh));transition:opacity 1.2s ease,transform 1.2s ease,filter .3s ease;cursor:grab;touch-action:none;animation:suninvite 2.6s ease-in-out infinite;z-index:5}
+#m1 .sun::after{content:'';position:absolute;inset:-20px;border-radius:50%}
+@keyframes suninvite{0%,100%{box-shadow:0 0 34px 6px rgba(242,193,78,.38)}50%{box-shadow:0 0 58px 16px rgba(242,193,78,.6)}}
+#m1 .villa{position:absolute;bottom:0;left:0;right:0;height:19vh;min-height:96px}
+#m1 .homewin{fill:var(--gold);opacity:calc(.45 + var(--dawn,0)*.55)}
+/* MOVEMENT II: THE GARDEN */
+#m2{background:var(--paper);cursor:pointer}
+#m2 .field{position:absolute;bottom:0;left:0;right:0;height:34vh;min-height:150px;background:var(--green)}
+#m2 .field::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;background:var(--leaf);opacity:.35}
+#m2 .soil{position:absolute;bottom:0;left:0;right:0;height:9vh;min-height:44px;background:var(--leaf)}
+#m2 .plant{position:absolute;bottom:calc(9vh - 4px);width:120px;height:220px;pointer-events:none;transform-origin:50% 100%;transform:scale(.35) translateY(10px);transition:transform 1.4s cubic-bezier(.34,1.35,.44,1),filter 1.4s ease}
+#m2 .plant.rising{transform:scale(1) translateY(0);filter:drop-shadow(0 0 12px rgba(242,193,78,.55))}
+#m2 .plant.s1.rising{transform:scale(.62) translateY(0)}
+#m2 .plant.s2.rising{transform:scale(.5) translateY(0)}
+#m2 .plant.s3.rising{transform:scale(.4) translateY(0)}
+/* the two grown sunflowers stand from the start */
+#m2 .plant.big{width:150px;height:280px;transform:none;transition:none;filter:drop-shadow(0 3px 8px rgba(45,52,54,.28))}
+#m2 .plant.big.sw1{animation:sway 5.4s ease-in-out infinite alternate}
+#m2 .plant.big.sw2{animation:sway 6.3s ease-in-out .8s infinite alternate}
+@keyframes sway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.2deg)}}
+#m2 .plant svg{width:100%;height:100%;display:block}
+#m2 .seed{position:absolute;bottom:calc(9vh - 2px);width:10px;height:13px;border-radius:45% 55% 50% 50%;background:#4A3A26;box-shadow:inset 0 -2px 0 rgba(0,0,0,.25);pointer-events:none;z-index:2}
+#m2 .sprout{position:absolute;bottom:calc(9vh - 2px);width:18px;height:30px;transform-origin:50% 100%;transform:scaleY(.35);transition:transform .5s cubic-bezier(.3,1.2,.5,1);pointer-events:none;z-index:2}
+#m2 .sprout.up{transform:scaleY(1)}
+#m2 .sprout::before{content:'';position:absolute;left:7px;top:4px;width:4px;height:26px;border-radius:3px;background:#6B8A5E}
+#m2 .sprout::after{content:'';position:absolute;left:-4px;top:9px;width:12px;height:7px;border-radius:60% 0 60% 0;background:#7DA06F;transform:rotate(-24deg)}25%{opacity:.85}100%{transform:scale(1.7);opacity:0}}
+#m2 .tapcard{position:relative;z-index:2;background:rgba(251,247,240,.9);border:1px solid rgba(58,63,74,.25);padding:1.1rem 1.7rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
+#m2 .p2{display:none}
+#m2.full .p1{display:none}
+#m2.full .p2{display:inline;animation:swapin .8s ease}
+@keyframes swapin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+/* MOVEMENT III: SEASONS */
+#m3{background:var(--babyblue)}
+#m3 .season{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+#m3 .season.on{opacity:1}
+#m3 .s-spring{background:var(--babyblue)}
+#m3 .s-summer{background:#FBEBC8}
+#m3 .s-autumn{background:#E9D9C4}
+#m3 .rain{position:absolute;top:0;left:0;width:120%;height:100%;background-image:repeating-linear-gradient(105deg,rgba(127,168,201,.55) 0 1.5px,transparent 1.5px 26px);animation:rain 1.1s linear infinite}
+@keyframes rain{to{transform:translateY(60px)}}
+#m3 .umbrella{position:absolute;bottom:36vh;width:70px;height:70px;border-radius:70px 70px 0 0;border:2.5px solid var(--ink);background:var(--babyblue)}
+#m3 .umbrella.u2{background:var(--blush);width:56px;height:56px}
+#m3 .rainlab{position:absolute;top:9vh;left:0;right:0}
+#m3 .ray{position:absolute;inset:0;background:conic-gradient(from 200deg at 78% 12%,rgba(242,193,78,.22) 0 8%,transparent 8% 100%)}
+#m3 .sf{position:absolute;bottom:9vh;width:90px;height:190px}
+#m3 .sf.big{width:110px;height:230px;animation:sway 5.5s ease-in-out infinite;transform-origin:50% 100%}
+#m3 .sf.small{width:52px;height:100px}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
+#m3 .sf .st{transform-origin:50% 100%;animation:petal 9s ease-in-out infinite alternate}
+@keyframes petal{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+#m3 .leafdrift{position:absolute;width:16px;height:11px;border-radius:60% 40% 55% 45%;background:var(--amber);animation:drift 7s linear infinite}
+@keyframes drift{from{transform:translate(-12vw,-6vh) rotate(0)}to{transform:translate(112vw,12vh) rotate(340deg)}}
+--x:0}#m3 .sealab{position:absolute;bottom:3.2vh;left:0;right:0;font-family:var(--sans);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;opacity:.55}
+/* MOVEMENT IV: WINTER */
+#m4{background:#2C3A55}
+#m4 .bluehour{position:absolute;inset:0;background:linear-gradient(#2C3A55,#3E4E6E 62%,#54689A)}
+#m4 .frost{position:absolute;inset:0;opacity:.5;background-image:repeating-linear-gradient(115deg,rgba(191,217,234,.16) 0 2px,transparent 2px 34px),repeating-linear-gradient(65deg,rgba(191,217,234,.12) 0 1.5px,transparent 1.5px 22px)}
+#m4 .snow{position:absolute;top:-4vh;border-radius:50%;background:var(--babyblue);opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(108vh) translateX(5vw)}}
+#m4 .sleepsf{position:absolute;bottom:8vh;width:64px;height:130px;opacity:.55}
+#m4 .sleeplab{position:absolute;bottom:3.4vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.5}
+/* MOVEMENT V: TULIPS */
+#m5{background:#33415E;cursor:default}
+#m5 .frostbed{position:absolute;bottom:0;left:0;right:0;height:38vh;min-height:170px;background:var(--green);filter:saturate(.55) brightness(.72)}
+#m5 .frostbed::before{content:'';position:absolute;inset:0;background:rgba(191,217,234,.28)}
+#m5 .frostbed::after{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:rgba(251,251,255,.65)}
+#m5 .bud{position:absolute;bottom:calc(38vh - 10px);width:96px;height:170px;cursor:pointer;transition:transform .3s ease}
+#m5 .bud:hover{transform:scale(1.05)}
+#m5 .bud svg{width:100%;height:100%}
+#m5 .bud .tulipb{transform-origin:50% 78%;transition:transform 1.7s cubic-bezier(.3,1.1,.3,1)}
+#m5 .bud .tulipb.open{transform:scale(1)}
+#m5 .bud .say{position:absolute;bottom:115%;left:50%;transform:translateX(-50%) translateY(8px);width:15rem;max-width:74vw;padding:.9rem 1rem;background:var(--paper);color:var(--ink);font-size:.98rem;line-height:1.5;border:1px solid rgba(58,63,74,.3);opacity:0;transition:opacity 1s ease .9s,transform 1s ease .9s;pointer-events:none}
+#m5 .bud.opened .say{opacity:1;transform:translateX(-50%) translateY(-6px)}
+#m5 .tulipcap{position:absolute;bottom:2.6vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.55;transition:opacity 1s}
+/* MOVEMENT VI: FINALE */
+#m6{background:linear-gradient(#3E4E6E,#7FA8C9 58%,#F6C9D0 96%)}
+#m6 .risesun{position:absolute;left:50%;top:58%;width:clamp(120px,26vw,230px);height:clamp(120px,26vw,230px);margin:calc(clamp(120px,26vw,230px)/-2) 0 0 calc(clamp(120px,26vw,230px)/-2);border-radius:50%;background:var(--gold);box-shadow:0 0 90px 24px rgba(242,193,78,.5);opacity:0;transition:opacity 2.4s ease,transform 3.2s ease;transform:scale(.6)}
+#m6.live .risesun{opacity:.97;transform:scale(1)}
+#m6 .risecard{position:relative;z-index:2;text-align:center}
+#m6 .risecard .l1{opacity:0;transition:opacity 1.6s ease 1.2s}
+#m6 .risecard .l2{font-size:clamp(2.6rem,9vw,5.2rem);letter-spacing:.06em;color:var(--gold);opacity:0;transition:opacity 2.2s ease 2.1s;text-shadow:0 0 26px rgba(242,193,78,.55)}
+#m6.live .risecard .l1{opacity:1}
+#m6.live .risecard .l2{opacity:1}
+#m6 .turnsf{position:absolute;bottom:10vh;width:96px;height:200px;animation:sway 6s ease-in-out infinite;transform-origin:50% 100%}
+#m6 .turnsf svg,#m6 .sp svg{width:100%;height:100%;display:block}
+#m6 .turnsf svg{transform-origin:50% 100%;transition:transform 2.8s cubic-bezier(.4,0,.2,1) 1s,filter 2.8s ease 1s}
+#m6.live .turnsf svg{transform:scale(1.18) rotate(-4deg);filter:brightness(1.12) drop-shadow(0 0 12px rgba(242,193,78,.5))}
+#m6 .sp{position:absolute;bottom:9vh;width:40px;height:78px}
+#m6 .sp svg{transform-origin:50% 100%;transition:transform 2.4s ease 1.4s,filter 2.4s ease 1.4s}
+#m6.live .sp svg{transform:scale(1.3);filter:brightness(1.15) drop-shadow(0 0 9px rgba(242,193,78,.5))}
+
+
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+<!-- AUDIO HOOK: the licensed song for the finale card attaches to this element (bible Section 6). Ships muted, no source, until the track is licensed. -->
+<audio id="garden-song" preload="none" muted playsinline></audio>
+<div class="grain" aria-hidden="true"></div>
+<main>
+<header id="prologue" class="scene" aria-label="The Garden of Always, a gift that plays like a short film as you scroll">
+<!-- FILM SLOT: Part 2, the film titled 8.12, renders into this frame when it is ready. This frame is reserved for the film. -->
+<figure class="film-slot rv" role="img" aria-label="A quiet framed place, held for light yet to arrive">
+<div class="film-frame"><span class="film-star" aria-hidden="true"></span></div>
+</figure>
+<h1 class="rv d1">The Garden of Always</h1>
+<p class="line rv d2">Some gardens keep more than flowers</p>
+</header>
+<!-- MOVEMENT MARKUP -->
+<section id="m1" class="scene" aria-label="Movement I: night sky over the garden. The stars form the coordinates 36.9145 degrees south, 174.7632 degrees east, where the garden began on 29 August 2023. Drag the sun across the sky to bring the dawn.">
+  <div class="sky">
+    <div class="sky-dawn"></div>
+    <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g class="stargroup">
+        <circle class="st" cx="80" cy="70" r="3.5"/><circle class="st" cx="180" cy="150" r="2.6"/><circle class="st" cx="260" cy="60" r="4.0"/><circle class="st" cx="330" cy="180" r="2.4"/><circle class="st" cx="420" cy="90" r="3.3"/><circle class="st" cx="500" cy="40" r="2.6"/><circle class="st" cx="560" cy="150" r="3.7"/><circle class="st" cx="650" cy="70" r="2.4"/><circle class="st" cx="720" cy="160" r="3.1"/><circle class="st" cx="800" cy="50" r="3.5"/><circle class="st" cx="880" cy="130" r="2.6"/><circle class="st" cx="940" cy="80" r="3.3"/><circle class="st" cx="120" cy="250" r="2.4"/><circle class="st" cx="240" cy="300" r="2.9"/><circle class="st" cx="360" cy="260" r="2.6"/><circle class="st" cx="480" cy="320" r="3.3"/><circle class="st" cx="600" cy="270" r="2.4"/><circle class="st" cx="700" cy="310" r="2.9"/><circle class="st" cx="820" cy="250" r="2.6"/><circle class="st" cx="900" cy="300" r="3.1"/>
+      </g>
+    </svg>
+      <svg class="skychart" viewBox="0 0 1000 520" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <g class="const" fill="none">
+          <path d="M96,158 L134,146 L172,166 L210,150 L248,170 L286,154"/>
+          <path d="M430,210 L488,268 L552,258 L614,250 L664,306 L610,368 L472,352 L438,300 L430,210"/>
+          <path d="M552,258 L588,392"/>
+          <path d="M744,404 L800,388"/>
+          <path d="M856,128 L902,118"/>
+        </g>
+        <g class="const">
+          <circle cx="96" cy="158" r="4"/><circle cx="134" cy="146" r="3.4"/><circle cx="172" cy="166" r="3.8"/><circle cx="210" cy="150" r="3.2"/><circle cx="248" cy="170" r="3.6"/><circle cx="286" cy="154" r="3.2"/>
+          <circle cx="430" cy="210" r="4.4"/><circle cx="488" cy="268" r="4.2"/><circle cx="552" cy="258" r="4.6"/><circle cx="614" cy="250" r="4.2"/><circle cx="664" cy="306" r="4.4"/><circle cx="610" cy="368" r="4.8"/><circle cx="472" cy="352" r="4.6"/><circle cx="438" cy="300" r="4.4"/>
+          <circle cx="588" cy="392" r="3.4"/><circle cx="560" cy="430" r="3.2"/>
+          <circle class="bright" cx="812" cy="384" r="7.5"/>
+          <circle class="bright venus" cx="308" cy="404" r="9"/>
+          <circle class="bright" cx="880" cy="120" r="6.5"/>
+        </g>
+        <text class="skylabel" x="176" y="112" text-anchor="middle">Matariki</text>
+        <text class="skylabel" x="547" y="176" text-anchor="middle">Orion</text>
+        <text class="skylabel" x="838" y="416" text-anchor="middle">Sirius</text>
+        <text class="skylabel" x="308" y="446" text-anchor="middle">the morning star</text>
+        <text class="skylabel" x="880" y="92" text-anchor="middle">Canopus</text>
+      </svg>
+  </div>
+  <div class="villa" aria-hidden="true">
+    <svg viewBox="0 0 1000 160" preserveAspectRatio="xMidYMax meet" style="width:100%;height:100%">
+      <path d="M0,160 L0,128 Q60,116 140,124 Q240,133 320,121 Q420,110 520,119 Q640,130 760,119 Q880,110 1000,121 L1000,160 Z" fill="#0D1526"/>
+      <path d="M0,160 L0,128 Q60,116 140,124 Q240,133 320,121 Q420,110 520,119 Q640,130 760,119 Q880,110 1000,121 L1000,160 Z" fill="#0D1526"/>
+      <!-- The Pah, Pah Homestead: Italianate villa (1877-79), Monte Cecilia Park, Hillsborough -->
+      <path d="M244,96 L290,78 L336,96 L330,96 L330,160 L250,160 L250,96 Z" fill="#0D1526"/>
+      <path d="M296,92 L296,52 L308,52 L308,94 Z" fill="#0D1526"/>
+      <path d="M330,160 L330,78 L540,78 L540,160 Z" fill="#0D1526"/>
+      <path d="M534,96 L580,78 L626,96 L620,96 L620,160 L540,160 L540,96 Z" fill="#0D1526"/>
+      <path d="M560,92 L560,52 L572,52 L572,94 Z" fill="#0D1526"/>
+      <path d="M400,78 L435,40 L470,78 Z" fill="#0D1526"/>
+      <path class="homewin" d="M420,134 L420,112 Q433,96 446,112 L446,134 Z"/>
+      <path d="M796,160 L801,96 L809,96 L814,160 Z" fill="#0D1526"/>
+      <circle cx="805" cy="74" r="34" fill="#0D1526"/>
+      <circle cx="779" cy="90" r="21" fill="#0D1526"/>
+      <circle cx="831" cy="88" r="19" fill="#0D1526"/>
+    </svg>
+  </div>
+  <p class="coords rv">29.08.2023 · where the garden began</p>
+  <div class="sun" id="dawnSun" role="slider" aria-label="Drag the sun across the sky to bring the dawn" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"></div>
+  <p class="hint">drag the sun to wake the morning</p>
+</section>
+<section id="m2" class="scene" aria-label="Movement II: the garden. Tap anywhere on the soil to plant the first sunflower.">
+  <div class="field"></div>
+  <div class="soil"></div>
+  <div id="plantings"></div>
+
+  <p class="tapcard rv"><span class="p1">tap the garden to plant the first sunflower</span><span class="p2">the garden is planted · keep scrolling</span></p>
+  <p class="hint">A home where all can flourish</p>
+  
+  <p class="sealab rv d1">a garden takes root where you tap</p>
+</section>
+<section id="m3" class="scene" aria-label="Movement III: the seasons pass. Spring rain, then summer gold, then autumn wind. Two small sunflower sprouts grow beside the tall stalks.">
+  <div class="season s-spring on">
+    <div class="rain" aria-hidden="true"></div>
+    <div class="umbrella" style="left:16%" aria-hidden="true"></div>
+    <div class="umbrella u2" style="left:30%" aria-hidden="true"></div>
+    <p class="rainlab line rv">spring rain over the same soil</p>
+  </div>
+  <div class="season s-summer">
+    <div class="ray" aria-hidden="true"></div>
+    <p class="rainlab line rv">Two tiny stalks grew strong and loud</p>
+  </div>
+  <div class="season s-autumn">
+    <p class="rainlab line rv">Frolicking in the sun</p>
+  </div>
+  <div id="sfyard" aria-hidden="true"></div>
+  <svg class="sfart" style="left:12%;width:130px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,82" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M50,140 Q28,130 26,108 Q46,116 50,140" fill="#5F7A57"/><path d="M50,122 Q72,112 74,90 Q54,98 50,122" fill="#5F7A57"/><g><circle cx="50" cy="54" r="19" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="26" rx="9" ry="15"/><ellipse cx="50" cy="82" rx="9" ry="15"/><ellipse cx="23" cy="54" rx="15" ry="9"/><ellipse cx="77" cy="54" rx="15" ry="9"/><ellipse cx="30" cy="33" rx="8" ry="13" transform="rotate(-45 30 33)"/><ellipse cx="70" cy="33" rx="8" ry="13" transform="rotate(45 70 33)"/><ellipse cx="30" cy="75" rx="8" ry="13" transform="rotate(45 30 75)"/><ellipse cx="70" cy="75" rx="8" ry="13" transform="rotate(-45 70 75)"/></g><circle cx="50" cy="54" r="11" fill="#8A6420"/></g></svg>
+  <svg class="sfart s2" style="left:80%;width:120px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,84" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M50,144 Q30,134 28,114 Q48,122 50,144" fill="#5F7A57"/><g><circle cx="50" cy="56" r="17" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="30" rx="8" ry="13"/><ellipse cx="50" cy="82" rx="8" ry="13"/><ellipse cx="25" cy="56" rx="13" ry="8"/><ellipse cx="75" cy="56" rx="13" ry="8"/><ellipse cx="33" cy="38" rx="7" ry="11" transform="rotate(-45 33 38)"/><ellipse cx="67" cy="38" rx="7" ry="11" transform="rotate(45 67 38)"/><ellipse cx="33" cy="74" rx="7" ry="11" transform="rotate(45 33 74)"/><ellipse cx="67" cy="74" rx="7" ry="11" transform="rotate(-45 67 74)"/></g><circle cx="50" cy="56" r="10" fill="#8A6420"/></g></svg>
+  <svg class="sfart s3" style="left:26%;width:56px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,120" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M50,168 Q34,160 32,144 Q48,152 50,168" fill="#5F7A57"/><g><circle cx="50" cy="98" r="12" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="80" rx="6" ry="9"/><ellipse cx="50" cy="116" rx="6" ry="9"/><ellipse cx="33" cy="98" rx="9" ry="6"/><ellipse cx="67" cy="98" rx="9" ry="6"/></g><circle cx="50" cy="98" r="7" fill="#8A6420"/></g></svg>
+  <svg class="sfart s2" style="left:62%;width:50px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,126" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M50,172 Q36,164 34,150 Q50,158 50,172" fill="#5F7A57"/><g><circle cx="50" cy="104" r="11" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="87" rx="6" ry="9"/><ellipse cx="50" cy="121" rx="6" ry="9"/><ellipse cx="34" cy="104" rx="9" ry="6"/><ellipse cx="66" cy="104" rx="9" ry="6"/></g><circle cx="50" cy="104" r="6" fill="#8A6420"/></g></svg>
+  <p class="sealab" id="sealab">the seasons turn, the sunflowers return</p>
+</section>
+<section id="m4" class="scene" aria-label="Movement IV: winter frost over the sleeping garden, blue hour.">
+  <div class="bluehour" aria-hidden="true"></div>
+  <div class="frost" aria-hidden="true"></div>
+  <div id="snowyard" aria-hidden="true"></div>
+  <div class="sleepsf" style="left:22%"><svg viewBox="0 0 64 130"><path d="M32,130 L32,40" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M32,78 Q14,70 12,52 Q30,58 32,78" fill="#5F7A57"/><path d="M32,60 Q50,52 52,34 Q34,40 32,60" fill="#5F7A57"/><circle cx="32" cy="26" r="13" fill="#5F7A57"/></svg></div>
+  <div class="sleepsf" style="left:68%"><svg viewBox="0 0 64 130"><path d="M32,130 L32,40" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M32,78 Q14,70 12,52 Q30,58 32,78" fill="#5F7A57"/><path d="M32,60 Q50,52 52,34 Q34,40 32,60" fill="#5F7A57"/><circle cx="32" cy="26" r="13" fill="#5F7A57"/></svg></div>
+  <h1 class="line rv" style="color:var(--babyblue)">winter keeps the garden soft</h1>
+  <p class="sleeplab">the sunflowers sleep, the soil holds them</p>
+</section>
+<section id="m5" class="scene" aria-label="Movement V: December tulips bloom through the frost. Tap each bud to open it. The pink tulip and the blue tulip each carry a line for her.">
+  <div class="frostbed" aria-hidden="true"></div>
+  <div class="bud" style="left:26%" data-color="pink" role="button" tabindex="0" aria-label="A closed pink tulip bud. Tap to open it.">
+    <svg viewBox="0 0 96 170" aria-hidden="true"><path d="M48,170 L48,64" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M48,110 Q26,102 24,84 Q44,90 48,110" fill="#5F7A57"/><path d="M48,96 Q70,88 72,70 Q52,76 48,96" fill="#5F7A57"/><g class="tulipb"><path d="M48,72 Q22,60 26,24 Q38,40 48,44 Q58,40 70,24 Q74,60 48,72 Z" fill="#F6C9D0"/><path d="M48,72 Q36,58 38,26 Q46,42 48,46 Z" fill="#E8A0B4"/></g><g class="budcase" fill="#31405C"><path d="M40,44 Q48,40 56,44 L54,66 Q48,70 42,66 Z"/><path d="M41,68 Q48,64 55,68 L53,74 Q48,77 43,74 Z" opacity=".8"/></g></svg>
+    <p class="say">Pink, for every soft thing you are.</p>
+  </div>
+  <div class="bud" style="left:56%" data-color="blue" role="button" tabindex="0" aria-label="A closed baby blue tulip bud. Tap to open it.">
+    <svg viewBox="0 0 96 170" aria-hidden="true"><path d="M48,170 L48,64" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M48,110 Q26,102 24,84 Q44,90 48,110" fill="#5F7A57"/><path d="M48,96 Q70,88 72,70 Q52,76 48,96" fill="#5F7A57"/><g class="tulipb"><path d="M48,72 Q22,60 26,24 Q38,40 48,44 Q58,40 70,24 Q74,60 48,72 Z" fill="#BFD9EA"/><path d="M48,72 Q36,58 38,26 Q46,42 48,46 Z" fill="#7FA8C9"/></g><g class="budcase" fill="#31405C"><path d="M40,44 Q48,40 56,44 L54,66 Q48,70 42,66 Z"/><path d="M41,68 Q48,64 55,68 L53,74 Q48,77 43,74 Z" opacity=".8"/></g></svg>
+    <p class="say">Blue, for how you shimmer in the ocean.</p>
+  </div>
+  <p class="tulipcap" id="tulipcap">December. Tap each bud and it opens through the frost.</p>
+</section>
+<section id="m6" class="scene" aria-label="Movement VI: the sunflowers turn from the sky to face you, and 8.12 rises as light.">
+  <div class="risesun" aria-hidden="true"></div>
+  <div class="turnsf" style="left:12%"><svg viewBox="0 0 96 200" aria-hidden="true"><path d="M48,200 L48,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M48,140 Q22,132 18,110 Q44,118 48,140" fill="#5F7A57"/><path d="M48,124 Q74,116 78,94 Q52,102 48,124" fill="#5F7A57"/><g class="st"><circle cx="48" cy="40" r="24" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="48" cy="12" rx="8" ry="13"/><ellipse cx="48" cy="68" rx="8" ry="13"/><ellipse cx="20" cy="40" rx="13" ry="8"/><ellipse cx="76" cy="40" rx="13" ry="8"/><ellipse cx="28" cy="20" rx="8" ry="12" transform="rotate(-45 28 20)"/><ellipse cx="68" cy="20" rx="8" ry="12" transform="rotate(45 68 20)"/><ellipse cx="28" cy="60" rx="8" ry="12" transform="rotate(45 28 60)"/><ellipse cx="68" cy="60" rx="8" ry="12" transform="rotate(-45 68 60)"/></g><circle cx="48" cy="40" r="13" fill="#5F7A57"/></g></svg></div>
+  <div class="turnsf" style="left:80%"><svg viewBox="0 0 96 200" aria-hidden="true"><path d="M48,200 L48,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M48,140 Q22,132 18,110 Q44,118 48,140" fill="#5F7A57"/><path d="M48,124 Q74,116 78,94 Q52,102 48,124" fill="#5F7A57"/><g class="st"><circle cx="48" cy="40" r="24" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="48" cy="12" rx="8" ry="13"/><ellipse cx="48" cy="68" rx="8" ry="13"/><ellipse cx="20" cy="40" rx="13" ry="8"/><ellipse cx="76" cy="40" rx="13" ry="8"/><ellipse cx="28" cy="20" rx="8" ry="12" transform="rotate(-45 28 20)"/><ellipse cx="68" cy="20" rx="8" ry="12" transform="rotate(45 68 20)"/><ellipse cx="28" cy="60" rx="8" ry="12" transform="rotate(45 28 60)"/><ellipse cx="68" cy="60" rx="8" ry="12" transform="rotate(-45 68 60)"/></g><circle cx="48" cy="40" r="13" fill="#5F7A57"/></g></svg></div>
+  <div class="sp" style="left:30%"><svg viewBox="0 0 40 78" aria-hidden="true"><path d="M20,78 L20,30" stroke="#5F7A57" stroke-width="3.5" fill="none"/><g class="st"><circle cx="20" cy="16" r="10" fill="#F2C14E"/><circle cx="20" cy="16" r="5" fill="#E09B2D"/></g></svg></div>
+  <div class="sp" style="left:62%"><svg viewBox="0 0 40 78" aria-hidden="true"><path d="M20,78 L20,30" stroke="#5F7A57" stroke-width="3.5" fill="none"/><g class="st"><circle cx="20" cy="16" r="10" fill="#F2C14E"/><circle cx="20" cy="16" r="5" fill="#E09B2D"/></g></svg></div>
+  <div class="risecard">
+    <p class="line l1">They are yours, and you are them,</p>
+    <p class="line l1 d1" style="font-size:clamp(1.05rem,2.6vw,1.5rem)">The heart of our garden</p>
+    <h1 class="risecard-l1 l1" style="margin-top:4vh;font-size:clamp(1.3rem,3.4vw,2.1rem)">The rarest bloom of all</h1>
+    <p class="l2">8.12 born</p>
+  </div>
+</section>
+</main>
+<footer class="endpaper">
+  <p>36.9145°S 174.7632°E · 29.08.2023 · Always and forever</p>
+</footer>
+<script>
+(function(){
+'use strict';
+var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* reveal scenes */
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    e.target.classList.add('live');
+    if(e.target.id==='m3') seasons();
+    if(e.target.id==='m4') snow();
+  });
+},{threshold:.35});
+document.querySelectorAll('.scene, header').forEach(function(s){io.observe(s);});
+/* MOVEMENT I: drag the sun to break the dawn */
+var sun = document.getElementById('dawnSun'), m1 = document.getElementById('m1'), drag = false;
+function dawnTo(clientX){
+  var r = m1.getBoundingClientRect();
+  if(!r.width || isNaN(clientX)) return;
+  var p = Math.min(1, Math.max(0, (clientX - r.left)/r.width));
+  m1.style.setProperty('--dawn', p.toFixed(3));
+  sun.setAttribute('aria-valuenow', Math.round(p*100));
+  sun.style.left = (5 + p*78) + '%';
+}
+sun.addEventListener('pointerdown', function(e){drag=true; sun.setPointerCapture(e.pointerId); sun.classList.add('grabbing'); dawnTo(e.clientX); if(e.pointerType==='touch'){e.preventDefault();}});
+sun.addEventListener('pointermove', function(e){if(drag) dawnTo(e.clientX);});
+function endDrag(){drag=false; sun.classList.remove('grabbing');}
+sun.addEventListener('pointerup', endDrag);
+sun.addEventListener('pointercancel', endDrag);
+/* TOUCH: whole sky is the tap surface — tapping sky sets dawn directly; sun remains the drag control */
+m1.addEventListener('pointerdown', function(e){ if(e.target===sun || e.target.closest('.sun')) return; if(e.pointerType!=='touch' && e.pointerType!=='mouse') return; dawnTo(e.clientX); });
+/* drag continues anywhere on m1 once started on the sun (pointer capture handles it) */
+m1.addEventListener('pointermove', function(e){ if(drag) dawnTo(e.clientX); });
+sun.addEventListener('keydown', function(e){
+  var cur = parseFloat(getComputedStyle(m1).getPropertyValue('--dawn'))||0;
+  if(e.key==='ArrowRight'||e.key==='ArrowUp'){dawnTo(m1.getBoundingClientRect().left + (cur+.12)*m1.getBoundingClientRect().width);}
+  if(e.key==='ArrowLeft'||e.key==='ArrowDown'){dawnTo(m1.getBoundingClientRect().left + (cur-.12)*m1.getBoundingClientRect().width);}
+});
+/* MOVEMENT II: tap to plant — seed falls, soil answers, sprout rises, sunflower blooms. Cap: 6. */
+var m2 = document.getElementById('m2'), yard = document.getElementById('plantings'), planted = 0, PLANT_CAP = 3;
+var SF = '<svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg>';
+/* two grown sunflowers already stand in the garden */
+[[20,'sw1'],[61,'sw2']].forEach(function(cfg){
+  var b = document.createElement('div');
+  b.className = 'plant big ' + cfg[1];
+  b.style.left = 'calc(' + cfg[0] + '% - 75px)';
+  b.innerHTML = SF;
+  yard.appendChild(b);
+});
+m2.addEventListener('pointerdown', plantRitual);
+/* synthetic click pipelines that never fire pointerdown still get to play (debounced) */
+m2.addEventListener('click', function(e){
+  plantRitual(e);   /* debounced — no-ops if the pointerdown path just ran */
+});
+var lastPlantAt = 0;
+function plantRitual(e){
+  if(Date.now() - lastPlantAt < 500) return;
+  if(planted >= PLANT_CAP) return;
+  var r = m2.getBoundingClientRect();
+  var card = m2.querySelector('.tapcard');
+  var cr = card.getBoundingClientRect();
+  var zoneTop = cr.top - r.top - 6;
+  var inCard = !!(e.target.closest && e.target.closest('.tapcard'));
+  var hasXY = (typeof e.clientX === 'number' && isFinite(e.clientX) && typeof e.clientY === 'number' && isFinite(e.clientY));
+  if(!inCard && (!hasXY || (e.clientY - r.top) < zoneTop)) return;
+  var xPct = inCard ? ((cr.left + cr.width/2 - r.left)/r.width)*100
+                    : ((e.clientX - r.left)/r.width)*100;
+  xPct = Math.min(86, Math.max(8, xPct));
+  var soilH = m2.querySelector('.soil').getBoundingClientRect().height;
+  var soilY = r.height - soilH - 6;                 /* landing line, scene-local */
+  var tapY = hasXY ? (e.clientY - r.top) : soilY - 80;
+  var fall = (tapY <= soilY) ? (soilY - tapY) : 88; /* below the line: still an 88px drop */
+  fall = Math.max(26, Math.min(fall, soilY));       /* always a visible drop */
+  lastPlantAt = Date.now();
+  planted++;
+  var sizeCls = 's' + planted;   /* fixed at tap time — rapid taps each keep their own size */
+  /* 1) seed drops from the tap point — transition-based, no CSS vars in the animation path */
+  var seed = document.createElement('div');
+  seed.className = 'seed';
+  seed.style.left = 'calc(' + xPct + '% - 5px)';
+  seed.style.transform = 'translateY(' + (-fall).toFixed(0) + 'px)';
+  yard.appendChild(seed);
+  var land = Math.round(150 + fall * 0.85);
+  seed.style.transition = 'transform ' + land + 'ms cubic-bezier(.55,0,.85,.36)';
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){
+    seed.style.transform = 'translateY(0)';
+  }); });
+  setTimeout(function(){
+    seed.remove();
+    /* 2) soil poof (starts visible; animation only spreads+fades it) */
+    var poof = document.createElement('div');
+    poof.className = 'poof'; poof.style.left = 'calc(' + xPct + '% - 30px)';
+    yard.appendChild(poof);
+    setTimeout(function(){ poof.remove(); }, 950);
+    /* 3) sprout (starts at 35% height, grows) */
+    var spr = document.createElement('div');
+    spr.className = 'sprout'; spr.style.left = 'calc(' + xPct + '% - 9px)';
+    yard.appendChild(spr);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ spr.classList.add('up'); }); });
+    /* 4) sunflower (starts at 72% scale, rises the rest) */
+    setTimeout(function(){
+      spr.remove();
+      var p = document.createElement('div');
+      p.className = 'plant ' + sizeCls; p.style.left = 'calc(' + xPct + '% - 60px)';
+      p.innerHTML = SF;
+      yard.appendChild(p);
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ p.classList.add('rising'); }); });
+      if(planted >= PLANT_CAP){ m2.classList.add('full'); }
+    }, 620);
+  }, land);
+}
+/* MOVEMENT III: seasons pass, sprouts appear */
+var m3 = document.getElementById('m3'), seasonsDone = false;
+function seasons(){
+  if(seasonsDone) return; seasonsDone = true;
+  var lab = document.getElementById('sealab');
+  var seq = [['s-summer','summer gold, the stalks rise'],['s-autumn','autumn wind carries the petals']];
+  if(RM){
+    m3.querySelectorAll('.season').forEach(function(s){s.classList.add('on');});
+    lab.textContent = 'spring rain, summer gold, autumn wind';
+    sprouts(true);
+    return;
+  }
+  sprouts(false);
+  seq.forEach(function(step,i){
+    setTimeout(function(){
+      m3.querySelector('.s-spring').classList.remove('on');
+      m3.querySelectorAll('.season').forEach(function(s){s.classList.remove('on');});
+      m3.querySelector('.'+step[0]).classList.add('on');
+      lab.textContent = step[1];
+    }, 6500*(i+1));
+  });
+}
+function sprouts(now){
+  var y = document.getElementById('sfyard');
+  var big = '<div class="sf big" style="left:L%"><svg viewBox="0 0 110 230"><path d="M55,230 L55,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M55,150 Q25,140 20,112 Q52,124 55,150" fill="#5F7A57"/><path d="M55,128 Q85,118 90,90 Q58,102 55,128" fill="#5F7A57"/><g class="st"><circle cx="55" cy="42" r="27" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="55" cy="9" rx="9" ry="15"/><ellipse cx="55" cy="75" rx="9" ry="15"/><ellipse cx="22" cy="42" rx="15" ry="9"/><ellipse cx="88" cy="42" rx="15" ry="9"/><ellipse cx="32" cy="19" rx="9" ry="13" transform="rotate(-45 32 19)"/><ellipse cx="78" cy="19" rx="9" ry="13" transform="rotate(45 78 19)"/><ellipse cx="32" cy="65" rx="9" ry="13" transform="rotate(45 32 65)"/><ellipse cx="78" cy="65" rx="9" ry="13" transform="rotate(-45 78 65)"/></g><circle cx="55" cy="42" r="14" fill="#5F7A57"/></g></svg></div>';
+  var small = '<div class="sf small" style="left:L%"><svg viewBox="0 0 52 100"><path d="M26,100 L26,42" stroke="#5F7A57" stroke-width="4" fill="none"/><path d="M26,70 Q12,64 10,50 Q24,56 26,70" fill="#5F7A57"/><circle cx="26" cy="28" r="13" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="26" cy="10" rx="5" ry="9"/><ellipse cx="26" cy="46" rx="5" ry="9"/><ellipse cx="8" cy="28" rx="9" ry="5"/><ellipse cx="44" cy="28" rx="9" ry="5"/></g><circle cx="26" cy="28" r="6" fill="#5F7A57"/></svg></div>';
+  var spots = [['18',big],['40',big],['58',small],['70',small]];
+  spots.forEach(function(s,i){
+    var d = document.createElement('div');
+    d.innerHTML = s[1].replace('L%', s[0]+'%');
+    var el = d.firstChild;
+    if(!RM && !now){el.style.opacity='0'; el.style.transition='opacity 2s ease '+(4.5+i*.7)+'s';}
+    y.appendChild(el);
+    if(!RM && !now){requestAnimationFrame(function(){el.style.opacity='1';});}
+  });
+}
+/* MOVEMENT IV: snowfall */
+var snowed = false;
+function snow(){
+  if(snowed) return; snowed = true;
+  var y = document.getElementById('snowyard');
+  for(var i=0;i<26;i++){
+    var f = document.createElement('div');
+    f.className = 'snow';
+    var s = 3 + Math.random()*5;
+    f.style.cssText = 'left:'+(Math.random()*100)+'%;width:'+s+'px;height:'+s+'px;animation-duration:'+(7+Math.random()*9)+'s;animation-delay:'+(Math.random()*8)+'s';
+    y.appendChild(f);
+  }
+}
+/* MOVEMENT V: tulips bloom on tap */
+var opened = 0;
+document.querySelectorAll('#m5 .bud').forEach(function(b){
+  function open(){
+    if(b.classList.contains('opened')) return;
+    b.classList.add('opened');
+    b.querySelector('.tulipb').classList.add('open');
+    b.setAttribute('aria-expanded','true');
+    opened++;
+    if(opened===2){
+      var cap = document.getElementById('tulipcap');
+      cap.innerHTML = 'They are yours, and you are them,<br>The heart of our garden';
+      cap.style.letterSpacing = '.08em'; cap.style.textTransform = 'none'; cap.style.fontSize = '1rem';
+    }
+  }
+  b.addEventListener('click', open); b.addEventListener('pointerdown', function(e){if(e.pointerType!=='touch') open();});
+  b.addEventListener('keydown', function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault(); open();}});
+});
+})();
+</script>
+</body>
+</html>
