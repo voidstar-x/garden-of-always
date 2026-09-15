@@ -6,48 +6,7 @@
 <meta name="theme-color" content="#1E2A44">
 <title>The Garden of Always</title>
 <meta name="description" content="A private garden, told in six movements.">
-<noscript><style>.rv,.coords,.season,.risesun,.risecard .l1,.risecard .l2{opacity:1!important;transform:none!important}
-/* ================= MOBILE-FIRST LAYER (iPhone 17 tuned, v3) ================= */
-:root{--sab:env(safe-area-inset-bottom,0px);--sat:env(safe-area-inset-top,0px)}
-html{font-size:16px}
-.scene{padding:calc(9vh + var(--sat)) 7vw calc(6vh + var(--sab));min-height:100vh;min-height:100dvh;min-height:100svh}
-/* — Typography: readable at arm's length, poem-first — */
-#prologue h1{font-size:clamp(2.1rem,8.6vw,3rem)!important;line-height:1.15}
-#prologue .rv{font-size:clamp(1.05rem,4.4vw,1.3rem)!important;letter-spacing:.02em!important}
-#m1 .skychart{width:min(94vw,760px);height:auto;display:block;margin:0 auto;position:relative}
-#m1 .skychart .bright{opacity:0;transition:opacity 1.2s ease 2.2s}
-#m1.live .skychart .bright{opacity:1}
-#m1 .venus{transition-delay:3s}
-#m1 .skylabel{font-family:var(--sans);font-size:30px;letter-spacing:.08em;fill:#F2EAD3;opacity:0;transition:opacity 1.8s ease 2.8s}
-#m1.live .skylabel{opacity:.96}
-#m1 .coords{font-size:clamp(1rem,4.2vw,1.25rem)!important;letter-spacing:.34em!important}
-#m2 .tapcard{font-size:clamp(1.02rem,4vw,1.3rem)!important;letter-spacing:.2em!important;padding:1.2rem 1.6rem!important;max-width:86vw}
-#m2 .hint,#m3 .sealab,#m5 .tulipcap{font-size:clamp(.85rem,3.6vw,1.05rem)!important;letter-spacing:.2em!important}
-#m3 .rainlab{font-size:clamp(1.3rem,5.6vw,1.7rem)!important;line-height:1.3}
-#m5 .say{font-size:clamp(1.02rem,4.4vw,1.25rem)!important;width:min(78vw,19rem)!important}
-#m6 .risecard .l1{font-size:clamp(1.5rem,6.4vw,2rem)!important}
-#m6 .risecard .l2{font-size:clamp(3rem,13vw,4.6rem)!important}
-/* — Portrait composition: tall sky, generous garden, big actors — */
-#m2 .field{height:44vh;min-height:220px}
-#m2 .soil{height:11vh;min-height:64px}
-#m5 .frostbed{height:46vh;min-height:240px}
-#m5 .bud{width:118px;height:210px;bottom:calc(46vh - 12px)}
-#m5 .bud .say{bottom:118%;padding:1rem 1.1rem}
-#m1 svg .st{filter:none}
-#m1 .sun{width:clamp(72px,17vw,96px)!important;height:clamp(72px,17vw,96px)!important}
-.film-frame{aspect-ratio:9/14;max-height:52vh;max-width:78vw;margin:0 auto}
-/* — Sunflower scale-up for portrait (inline widths are desktop-tuned) — */
-.sfart{transform-origin:50% 100%}
-@media (max-width:480px){
-  #m3 .sfart{bottom:6vh}
-  }
-/* — Tap targets ≥44px & thumb-reachable — */
-#m5 .bud{padding:6px}
-#m5 .bud::after{content:'';position:absolute;inset:-14px}
-/* — respects home-bar indicator — */
-footer.endpaper{padding-bottom:calc(1.4rem + var(--sab))!important}
-#m1 .hint{font-size:clamp(.95rem,3.6vw,1.2rem)!important;letter-spacing:.22em!important;color:#C7CEDC!important;text-shadow:0 1px 6px rgba(10,16,32,.9)!important}
-</style></noscript>
+<noscript><style>.rv,.coords,.season,.risesun,.risecard .l1,.risecard .l2{opacity:1!important;transform:none!important}</style></noscript>
 <style>
 :root{
 --blush:#F6C9D0;--petal:#E8A0B4;--babyblue:#BFD9EA;--dusk:#7FA8C9;
@@ -63,6 +22,7 @@ html:not(.js) #m1 .skychart .bright,
 html:not(.js) .coords,
 html:not(.js) #m3 .season,
 html:not(.js) #m5 .bud .say,
+html:not(.js) .tulipb,
 html:not(.js) #m6 .risesun,
 html:not(.js) .risecard .l1,
 html:not(.js) .risecard .l2{opacity:1!important;transform:none!important}
@@ -83,7 +43,7 @@ html:not(.js) .risecard .l2{opacity:1!important;transform:none!important}
 .bud .budcase{transition:opacity .9s ease}
 /* ================= TOUCH SYSTEM (v4): whole-page touch optimisation ================= */
 /* 1) No double-tap zoom delay, no accidental pinch inside scenes; scrolling stays native */
-html{-webkit-tap-highlight-color:rgba(242,193,78,.18);touch-action:pan-y;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{-webkit-tap-highlight-color:rgba(242,193,78,.18);touch-action:pan-y pinch-zoom;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* NOTE: sky keeps native pan (scroll must survive); only the SUN is a drag surface */
 /* 2) Every tappable gets pressed-state feedback (replaces hover-only affordance) */
 #m5 .bud:hover{transform:scale(1.05)}
@@ -128,6 +88,44 @@ h1{font-weight:400;font-size:clamp(1.9rem,5.5vw,3.1rem);letter-spacing:.05em;lin
 .rv{opacity:1;transform:none}
 html{scroll-behavior:auto}
 }
+/* ===== MOBILE-FIRST LAYER (freed from noscript 09-15, Astra issue 2) ===== */
+/* ================= MOBILE-FIRST LAYER (iPhone 17 tuned, v3) ================= */
+:root{--sab:env(safe-area-inset-bottom,0px);--sat:env(safe-area-inset-top,0px)}
+html{font-size:16px}
+.scene{padding:calc(9vh + var(--sat)) 7vw calc(6vh + var(--sab));min-height:100vh;min-height:100dvh;min-height:100svh}
+/* — Typography: readable at arm's length, poem-first — */
+#prologue h1{font-size:clamp(2.1rem,8.6vw,3rem)!important;line-height:1.15}
+#prologue .rv{font-size:clamp(1.05rem,4.4vw,1.3rem)!important;letter-spacing:.02em!important}
+#m1 .skychart{width:min(94vw,760px);height:auto;display:block;margin:0 auto;position:relative}
+#m1 .skychart .bright{opacity:0;transition:opacity 1.2s ease 2.2s}
+#m1.live .skychart .bright{opacity:1}
+#m1 .venus{transition-delay:3s}
+#m1 .skylabel{font-family:var(--sans);font-size:30px;letter-spacing:.08em;fill:#F2EAD3;opacity:0;transition:opacity 1.8s ease 2.8s}
+#m1.live .skylabel{opacity:.96}
+#m1 .coords{font-size:clamp(1rem,4.2vw,1.25rem)!important;letter-spacing:.34em!important}
+#m2 .tapcard{font-size:clamp(1.02rem,4vw,1.3rem)!important;letter-spacing:.2em!important;padding:1.2rem 1.6rem!important;max-width:86vw}
+#m2 .hint,#m3 .sealab,#m5 .tulipcap{font-size:clamp(.85rem,3.6vw,1.05rem)!important;letter-spacing:.2em!important}
+#m3 .rainlab{font-size:clamp(1.3rem,5.6vw,1.7rem)!important;line-height:1.3}
+#m5 .say{font-size:clamp(1.02rem,4.4vw,1.25rem)!important;width:min(78vw,19rem)!important}
+#m6 .risecard .l1{font-size:clamp(1.5rem,6.4vw,2rem)!important}
+#m6 .risecard .l2{font-size:clamp(3rem,13vw,4.6rem)!important}
+/* — Portrait composition: tall sky, generous garden, big actors — */
+#m2 .field{height:44vh;min-height:220px}
+#m2 .soil{height:11vh;min-height:64px}
+#m5 .frostbed{height:46vh;min-height:240px}
+#m5 .bud{width:118px;height:210px;bottom:calc(46vh - 12px)}
+#m5 .bud .say{bottom:118%;padding:1rem 1.1rem}
+#m1 svg .st{filter:none}
+#m1 .sun{width:clamp(72px,17vw,96px)!important;height:clamp(72px,17vw,96px)!important}
+.film-frame{aspect-ratio:9/14;max-height:52vh;max-width:78vw;margin:0 auto}
+/* — Sunflower scale-up for portrait (inline widths are desktop-tuned) — */
+/* — Tap targets ≥44px & thumb-reachable — */
+#m5 .bud{padding:6px}
+#m5 .bud::after{content:'';position:absolute;inset:-14px}
+/* — respects home-bar indicator — */
+footer.endpaper{padding-bottom:calc(1.4rem + var(--sab))!important}
+#m1 .hint{font-size:clamp(.95rem,3.6vw,1.2rem)!important;letter-spacing:.22em!important;color:#C7CEDC!important;text-shadow:0 1px 6px rgba(10,16,32,.9)!important}
+
 /* MOVEMENT I: NIGHT SKY */
 #m1{background:var(--night)}
 #m1 .sky{position:absolute;inset:0}
@@ -154,9 +152,8 @@ html{scroll-behavior:auto}
 #m1 .villa{position:absolute;bottom:0;left:0;right:0;height:19vh;min-height:96px}
 #m1 .homewin{fill:var(--gold);opacity:calc(.45 + var(--dawn,0)*.55)}
 /* MOVEMENT II: THE GARDEN */
-#m2{background:var(--paper);cursor:pointer}
-#m2 .field{position:absolute;bottom:0;left:0;right:0;height:34vh;min-height:150px;background:linear-gradient(180deg,rgba(156,184,136,0) 0%,rgba(156,184,136,.75) 9vh,#9CB888 20vh)}
-#m2 .field::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;background:var(--leaf);opacity:.35}
+#m2{background:linear-gradient(180deg,#1E2A44 0vh,rgba(30,42,68,0) 8vh,var(--paper) 8vh);cursor:pointer}
+#m2 .field{position:absolute;bottom:0;left:0;right:0;height:34vh;min-height:150px;background:linear-gradient(180deg,rgba(156,184,136,0) 0%,rgba(156,184,136,.75) 9vh,#9CB888 20vh,#9CB888 26vh,rgba(156,184,136,0) 100%)}
 #m2 .soil{position:absolute;bottom:0;left:0;right:0;height:9vh;min-height:44px;background:linear-gradient(180deg,#9CB888 0%,#7C9468 40%,rgba(95,122,87,.85) 68%,rgba(95,122,87,0) 100%)}
 #m2 .plant{position:absolute;bottom:calc(9vh - 4px);width:120px;height:220px;pointer-events:none;transform-origin:50% 100%;transform:scale(.35) translateY(10px);transition:transform 1.4s cubic-bezier(.34,1.35,.44,1),filter 1.4s ease}
 #m2 .plant.rising{transform:scale(1) translateY(0);filter:drop-shadow(0 0 12px rgba(242,193,78,.55))}
@@ -176,7 +173,7 @@ html{scroll-behavior:auto}
 #m2 .sprout::after{content:'';position:absolute;left:-4px;top:9px;width:12px;height:7px;border-radius:60% 0 60% 0;background:#7DA06F;transform:rotate(-24deg)}
 #m2 .poof{position:absolute;bottom:calc(9vh - 8px);width:60px;height:18px;pointer-events:none;background:radial-gradient(circle at 18% 70%,#6B5236 0 22%,transparent 24%),radial-gradient(circle at 50% 30%,#7A5F40 0 20%,transparent 22%),radial-gradient(circle at 80% 66%,#6B5236 0 20%,transparent 22%),radial-gradient(circle at 36% 76%,#5F4A31 0 16%,transparent 18%),radial-gradient(circle at 64% 78%,#5F4A31 0 15%,transparent 17%);animation:poof .9s ease-out forwards}
 @keyframes poof{0%{transform:scale(.55);opacity:.95}100%{transform:scale(1.7) translateY(-8px);opacity:0}}
-#m2 .tapcard{position:relative;z-index:2;background:rgba(251,247,240,.9);border:1px solid rgba(58,63,74,.25);padding:1.1rem 1.7rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
+#m2 .tapcard{appearance:none;-webkit-appearance:none;display:block;cursor:pointer;font-family:var(--sans);position:relative;z-index:2;width:max-content;max-width:86vw;margin:0 auto;background:rgba(251,247,240,.9);border:1px solid rgba(58,63,74,.25);border-radius:2px;padding:1.1rem 1.7rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
 #m2 .p2{display:none}
 #m2.full .p1{display:none}
 #m2.full .p2{display:inline;animation:swapin .8s ease}
@@ -188,13 +185,13 @@ html{scroll-behavior:auto}
 #m3 .s-spring{background:none}
 #m3 .s-summer{background:none}
 #m3 .s-autumn{background:none}
-#m3 .field{position:absolute;bottom:0;left:0;right:0;height:34vh;min-height:150px;background:linear-gradient(180deg,rgba(156,184,136,0) 0%,rgba(156,184,136,.75) 9vh,#9CB888 20vh)}#m3 .soil{position:absolute;bottom:0;left:0;right:0;height:9vh;min-height:44px;background:linear-gradient(180deg,#9CB888 0%,#7C9468 40%,rgba(95,122,87,.85) 68%,rgba(95,122,87,0) 100%)}#m3 .rain{position:absolute;top:0;left:0;width:120%;height:100%;background-image:repeating-linear-gradient(105deg,rgba(127,168,201,.55) 0 1.5px,transparent 1.5px 26px);animation:rain 1.1s linear infinite}
+#m3 .field{position:absolute;bottom:0;left:0;right:0;height:34vh;min-height:150px;background:linear-gradient(180deg,rgba(156,184,136,0) 0%,rgba(156,184,136,.75) 9vh,#9CB888 20vh,#9CB888 26vh,rgba(156,184,136,0) 100%)}#m3 .soil{position:absolute;bottom:0;left:0;right:0;height:9vh;min-height:44px;background:linear-gradient(180deg,#9CB888 0%,#7C9468 40%,rgba(95,122,87,.85) 68%,rgba(95,122,87,0) 100%)}#m3 .rain{position:absolute;top:0;left:0;width:120%;height:100%;background-image:repeating-linear-gradient(105deg,rgba(127,168,201,.55) 0 1.5px,transparent 1.5px 26px);animation:rain 1.1s linear infinite}
 @keyframes rain{to{transform:translateY(60px)}}
 #m3 .umbrella{position:absolute;bottom:36vh;width:70px;height:70px;border-radius:70px 70px 0 0;border:2.5px solid var(--ink);background:var(--babyblue)}
 #m3 .umbrella.u2{background:var(--blush);width:56px;height:56px}
 #m3 .rainlab{position:absolute;top:9vh;left:0;right:0}
 #m3 .ray{position:absolute;inset:0;background:conic-gradient(from 200deg at 78% 12%,rgba(242,193,78,.22) 0 8%,transparent 8% 100%)}
-#m3 .sf{position:absolute;bottom:calc(9vh - 4px);width:120px;height:220px;transform-origin:50% 100%}#m3 .sf.big{width:150px;height:280px}#m3 .sf.big.sw1{animation:sway 5.4s ease-in-out infinite alternate}#m3 .sf.big.sw2{animation:sway 6.3s ease-in-out .8s infinite alternate}#m3 .sf.s1{animation:sway2 6.8s ease-in-out -1.2s infinite alternate}#m3 .sf.s2{animation:sway2 6.8s ease-in-out -2.6s infinite alternate}#m3 .sf.s3{animation:sway2 6.8s ease-in-out -3.9s infinite alternate}#m3 .sf.s1 svg,#m3 .sf.s2 svg,#m3 .sf.s3 svg{transform-origin:50% 100%}#m3 .sf.s1 svg{transform:scale(.62);animation:sfgrow 2.2s ease 5.2s both}#m3 .sf.s2 svg{transform:scale(.5);animation:sfgrow 2.2s ease 6.1s both}#m3 .sf.s3 svg{transform:scale(.4);animation:sfgrow 2.2s ease 7s both}@keyframes sfgrow{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion: reduce){#m3 .sf.s1 svg,#m3 .sf.s2 svg,#m3 .sf.s3 svg{animation:none}}
+#m3 .sf{position:absolute;bottom:calc(9vh - 4px);width:120px;height:220px;transform-origin:50% 100%}#m3 .sf svg{width:100%;height:100%;display:block}#m3 .sf.big{width:150px;height:280px}#m3 .sf.big.sw1{animation:sway 5.4s ease-in-out infinite alternate}#m3 .sf.big.sw2{animation:sway 6.3s ease-in-out .8s infinite alternate}#m3 .sf.s1{animation:sway2 6.8s ease-in-out -1.2s infinite alternate}#m3 .sf.s2{animation:sway2 6.8s ease-in-out -2.6s infinite alternate}#m3 .sf.s3{animation:sway2 6.8s ease-in-out -3.9s infinite alternate}#m3 .sf.s1 svg,#m3 .sf.s2 svg,#m3 .sf.s3 svg{transform-origin:50% 100%}#m3 .sf.s1 svg{transform:scale(.62);animation:sfgrow 2.2s ease 5.2s both}#m3 .sf.s2 svg{transform:scale(.5);animation:sfgrow 2.2s ease 6.1s both}#m3 .sf.s3 svg{transform:scale(.4);animation:sfgrow 2.2s ease 7s both}@keyframes sfgrow{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion: reduce){#m3 .sf.s1 svg,#m3 .sf.s2 svg,#m3 .sf.s3 svg{animation:none}}
 
 
 @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
@@ -203,16 +200,20 @@ html{scroll-behavior:auto}
 #m3 .leafdrift{position:absolute;width:16px;height:11px;border-radius:60% 40% 55% 45%;background:var(--amber);animation:drift 7s linear infinite}
 @keyframes drift{from{transform:translate(-12vw,-6vh) rotate(0)}to{transform:translate(112vw,12vh) rotate(340deg)}}
 #m3 .sealab{position:absolute;bottom:10.5vh;left:0;right:0;font-family:var(--sans);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink);opacity:.6}
+/* Astra #3: reduced motion shows ONE season layer (spring) — three stacked captions were unreadable */
+@media (prefers-reduced-motion: reduce){#m3 .s-summer,#m3 .s-autumn{display:none}}
+html:not(.js) #m3 .sf.s1 svg,html:not(.js) #m3 .sf.s2 svg,html:not(.js) #m3 .sf.s3 svg{opacity:1!important}
+html:not(.js) #m3 .s-summer,html:not(.js) #m3 .s-autumn{display:none}
 /* MOVEMENT IV: WINTER */
 #m4{background:linear-gradient(180deg,#8FA3C0 0vh,#4A5878 8vh,#2C3A55 16vh,#2C3A55 100%)}
-#m4 .bluehour{position:absolute;inset:0;background:linear-gradient(#2C3A55,#3E4E6E 62%,#54689A)}
+#m4 .bluehour{position:absolute;inset:0;background:linear-gradient(rgba(44,58,85,0) 0vh,rgba(44,58,85,0) 10vh,#2C3A55 24vh,#3E4E6E 55%,#54689A 78%,#33415E 100%)}
 #m4 .frost{position:absolute;inset:0;opacity:.5;background-image:repeating-linear-gradient(115deg,rgba(191,217,234,.16) 0 2px,transparent 2px 34px),repeating-linear-gradient(65deg,rgba(191,217,234,.12) 0 1.5px,transparent 1.5px 22px)}
 #m4 .snow{position:absolute;top:-4vh;border-radius:50%;background:var(--babyblue);opacity:.75;animation:fall linear infinite}
 @keyframes fall{to{transform:translateY(108vh) translateX(5vw)}}
 #m4 .sleepsf{position:absolute;bottom:8vh;width:64px;height:130px;opacity:.55}
-#m4 .sleeplab{position:absolute;bottom:3.4vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.5}
+#m4 .sleeplab{position:absolute;bottom:3.4vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.5;color:#C7CEDD}
 /* MOVEMENT V: TULIPS */
-#m5{background:#33415E;cursor:default}
+#m5{background:linear-gradient(180deg,#33415E 0%,#33415E 72%,#3E4E6E 100%);cursor:default}
 #m5 .frostbed{position:absolute;bottom:0;left:0;right:0;height:38vh;min-height:170px;background:var(--green);filter:saturate(.55) brightness(.72)}
 #m5 .frostbed::before{content:'';position:absolute;inset:0;background:rgba(191,217,234,.28)}
 #m5 .frostbed::after{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:rgba(251,251,255,.65)}
@@ -223,9 +224,11 @@ html{scroll-behavior:auto}
 #m5 .bud .tulipb.open{transform:scale(1)}
 #m5 .bud .say{position:absolute;bottom:115%;left:50%;transform:translateX(-50%) translateY(8px);width:15rem;max-width:74vw;padding:.9rem 1rem;background:var(--paper);color:var(--ink);font-size:.98rem;line-height:1.5;border:1px solid rgba(58,63,74,.3);opacity:0;transition:opacity 1s ease .9s,transform 1s ease .9s;pointer-events:none}
 #m5 .bud.opened .say{opacity:1;transform:translateX(-50%) translateY(-6px)}
-#m5 .tulipcap{position:absolute;bottom:2.6vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.55;transition:opacity 1s}
+/* Astra #4: stagger the two message cards vertically so both stay readable */
+#m5 .bud.blu .say{bottom:160%}
+#m5 .tulipcap{position:absolute;bottom:2.6vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.55;transition:opacity 1s;color:#C7CEDD}
 /* MOVEMENT VI: FINALE */
-#m6{background:linear-gradient(#3E4E6E,#7FA8C9 58%,#F6C9D0 96%)}
+#m6{background:linear-gradient(#3E4E6E,#7FA8C9 58%,#F6C9D0 90%,#FBF7F0 100%)}
 #m6 .risesun{position:absolute;left:50%;top:58%;width:clamp(120px,26vw,230px);height:clamp(120px,26vw,230px);margin:calc(clamp(120px,26vw,230px)/-2) 0 0 calc(clamp(120px,26vw,230px)/-2);border-radius:50%;background:var(--gold);box-shadow:0 0 90px 24px rgba(242,193,78,.5);opacity:0;transition:opacity 2.4s ease,transform 3.2s ease;transform:scale(.6)}
 #m6.live .risesun{opacity:.97;transform:scale(1)}
 #m6 .risecard{position:relative;z-index:2;text-align:center}
@@ -259,7 +262,7 @@ html{scroll-behavior:auto}
 <p class="line rv d2">Some gardens keep more than flowers</p>
 </header>
 <!-- MOVEMENT MARKUP -->
-<section id="m1" class="scene" aria-label="Movement I: night sky over the garden. The stars form the coordinates 36.9145 degrees south, 174.7632 degrees east, where the garden began on 29 August 2023. Drag the sun across the sky to bring the dawn.">
+<section id="m1" class="scene" aria-label="Movement I: the pre-dawn sky over the garden as it stood on 29 August 2023 — Matariki, Orion, Sirius, Canopus, and the morning star. Drag the sun across the sky to bring the dawn.">
   <div class="sky">
     <div class="sky-dawn"></div>
     <svg viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -315,9 +318,12 @@ html{scroll-behavior:auto}
 <section id="m2" class="scene" aria-label="Movement II: the garden. Tap anywhere on the soil to plant the first sunflower.">
   <div class="field"></div>
   <div class="soil"></div>
-  <div id="plantings"></div>
+  <div id="plantings">
+    <div class="plant big sw1" style="left:calc(20% - 75px)"></div>
+    <div class="plant big sw2" style="left:calc(61% - 75px)"></div>
+  </div>
 
-  <p class="tapcard rv"><span class="p1">tap the garden to plant the first sunflower</span><span class="p2">the garden is planted · keep scrolling</span></p>
+  <button type="button" class="tapcard rv"><span class="p1">tap the garden to plant the first sunflower</span><span class="p2">the garden is planted · keep scrolling</span></button>
   <p class="hint">A home where all can flourish</p>
   
   <p class="sealab rv d1">a garden takes root where you tap</p>
@@ -338,7 +344,10 @@ html{scroll-behavior:auto}
   <div class="season s-autumn">
     <p class="rainlab line rv">Frolicking in the sun</p>
   </div>
-  <div id="sfyard" aria-hidden="true"></div>
+  <div id="sfyard" aria-hidden="true">
+    <div class="sf big sw1" style="left:calc(18% - 75px)"></div>
+    <div class="sf big sw2" style="left:calc(66% - 75px)"></div>
+  </div>
   <p class="sealab" id="sealab">the seasons turn, the sunflowers return</p>
 </section>
 <section id="m4" class="scene" aria-label="Movement IV: winter frost over the sleeping garden, blue hour.">
@@ -356,7 +365,7 @@ html{scroll-behavior:auto}
     <svg viewBox="0 0 96 170" aria-hidden="true"><path d="M48,170 L48,64" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M48,110 Q26,102 24,84 Q44,90 48,110" fill="#5F7A57"/><path d="M48,96 Q70,88 72,70 Q52,76 48,96" fill="#5F7A57"/><g class="tulipb"><path d="M48,72 Q22,60 26,24 Q38,40 48,44 Q58,40 70,24 Q74,60 48,72 Z" fill="#F6C9D0"/><path d="M48,72 Q36,58 38,26 Q46,42 48,46 Z" fill="#E8A0B4"/></g><g class="budcase" fill="#31405C"><path d="M40,44 Q48,40 56,44 L54,66 Q48,70 42,66 Z"/><path d="M41,68 Q48,64 55,68 L53,74 Q48,77 43,74 Z" opacity=".8"/></g></svg>
     <p class="say">Pink, for every soft thing you are.</p>
   </div>
-  <div class="bud" style="left:56%" data-color="blue" role="button" tabindex="0" aria-label="A closed baby blue tulip bud. Tap to open it.">
+  <div class="bud blu" style="left:56%" data-color="blue" role="button" tabindex="0" aria-label="A closed baby blue tulip bud. Tap to open it.">
     <svg viewBox="0 0 96 170" aria-hidden="true"><path d="M48,170 L48,64" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M48,110 Q26,102 24,84 Q44,90 48,110" fill="#5F7A57"/><path d="M48,96 Q70,88 72,70 Q52,76 48,96" fill="#5F7A57"/><g class="tulipb"><path d="M48,72 Q22,60 26,24 Q38,40 48,44 Q58,40 70,24 Q74,60 48,72 Z" fill="#BFD9EA"/><path d="M48,72 Q36,58 38,26 Q46,42 48,46 Z" fill="#7FA8C9"/></g><g class="budcase" fill="#31405C"><path d="M40,44 Q48,40 56,44 L54,66 Q48,70 42,66 Z"/><path d="M41,68 Q48,64 55,68 L53,74 Q48,77 43,74 Z" opacity=".8"/></g></svg>
     <p class="say">Blue, for how you shimmer in the ocean.</p>
   </div>
@@ -365,7 +374,7 @@ html{scroll-behavior:auto}
 <section id="m6" class="scene" aria-label="Movement VI: the sunflowers turn from the sky to face you, and 8.12 rises as light.">
   <div class="risesun" aria-hidden="true"></div>
   <div class="turnsf" style="left:12%"><svg viewBox="0 0 96 200" aria-hidden="true"><path d="M48,200 L48,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M48,140 Q22,132 18,110 Q44,118 48,140" fill="#5F7A57"/><path d="M48,124 Q74,116 78,94 Q52,102 48,124" fill="#5F7A57"/><g class="st"><circle cx="48" cy="40" r="24" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="48" cy="12" rx="8" ry="13"/><ellipse cx="48" cy="68" rx="8" ry="13"/><ellipse cx="20" cy="40" rx="13" ry="8"/><ellipse cx="76" cy="40" rx="13" ry="8"/><ellipse cx="28" cy="20" rx="8" ry="12" transform="rotate(-45 28 20)"/><ellipse cx="68" cy="20" rx="8" ry="12" transform="rotate(45 68 20)"/><ellipse cx="28" cy="60" rx="8" ry="12" transform="rotate(45 28 60)"/><ellipse cx="68" cy="60" rx="8" ry="12" transform="rotate(-45 68 60)"/></g><circle cx="48" cy="40" r="13" fill="#5F7A57"/></g></svg></div>
-  <div class="turnsf" style="left:80%"><svg viewBox="0 0 96 200" aria-hidden="true"><path d="M48,200 L48,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M48,140 Q22,132 18,110 Q44,118 48,140" fill="#5F7A57"/><path d="M48,124 Q74,116 78,94 Q52,102 48,124" fill="#5F7A57"/><g class="st"><circle cx="48" cy="40" r="24" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="48" cy="12" rx="8" ry="13"/><ellipse cx="48" cy="68" rx="8" ry="13"/><ellipse cx="20" cy="40" rx="13" ry="8"/><ellipse cx="76" cy="40" rx="13" ry="8"/><ellipse cx="28" cy="20" rx="8" ry="12" transform="rotate(-45 28 20)"/><ellipse cx="68" cy="20" rx="8" ry="12" transform="rotate(45 68 20)"/><ellipse cx="28" cy="60" rx="8" ry="12" transform="rotate(45 28 60)"/><ellipse cx="68" cy="60" rx="8" ry="12" transform="rotate(-45 68 60)"/></g><circle cx="48" cy="40" r="13" fill="#5F7A57"/></g></svg></div>
+  <div class="turnsf" style="left:calc(80% - 96px)"><svg viewBox="0 0 96 200" aria-hidden="true"><path d="M48,200 L48,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M48,140 Q22,132 18,110 Q44,118 48,140" fill="#5F7A57"/><path d="M48,124 Q74,116 78,94 Q52,102 48,124" fill="#5F7A57"/><g class="st"><circle cx="48" cy="40" r="24" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="48" cy="12" rx="8" ry="13"/><ellipse cx="48" cy="68" rx="8" ry="13"/><ellipse cx="20" cy="40" rx="13" ry="8"/><ellipse cx="76" cy="40" rx="13" ry="8"/><ellipse cx="28" cy="20" rx="8" ry="12" transform="rotate(-45 28 20)"/><ellipse cx="68" cy="20" rx="8" ry="12" transform="rotate(45 68 20)"/><ellipse cx="28" cy="60" rx="8" ry="12" transform="rotate(45 28 60)"/><ellipse cx="68" cy="60" rx="8" ry="12" transform="rotate(-45 68 60)"/></g><circle cx="48" cy="40" r="13" fill="#5F7A57"/></g></svg></div>
   <div class="sp" style="left:30%"><svg viewBox="0 0 40 78" aria-hidden="true"><path d="M20,78 L20,30" stroke="#5F7A57" stroke-width="3.5" fill="none"/><g class="st"><circle cx="20" cy="16" r="10" fill="#F2C14E"/><circle cx="20" cy="16" r="5" fill="#E09B2D"/></g></svg></div>
   <div class="sp" style="left:62%"><svg viewBox="0 0 40 78" aria-hidden="true"><path d="M20,78 L20,30" stroke="#5F7A57" stroke-width="3.5" fill="none"/><g class="st"><circle cx="20" cy="16" r="10" fill="#F2C14E"/><circle cx="20" cy="16" r="5" fill="#E09B2D"/></g></svg></div>
   <div class="risecard">
@@ -413,22 +422,29 @@ m1.addEventListener('pointerdown', function(e){ if(e.target===sun || e.target.cl
 /* drag continues anywhere on m1 once started on the sun (pointer capture handles it) */
 m1.addEventListener('pointermove', function(e){ if(drag) dawnTo(e.clientX); });
 sun.addEventListener('keydown', function(e){
+  var k = e.key;
+  if(k!=='ArrowRight'&&k!=='ArrowUp'&&k!=='ArrowLeft'&&k!=='ArrowDown') return;
+  e.preventDefault();  /* arrows drive the sun, not the page scroll */
   var cur = parseFloat(getComputedStyle(m1).getPropertyValue('--dawn'))||0;
-  if(e.key==='ArrowRight'||e.key==='ArrowUp'){dawnTo(m1.getBoundingClientRect().left + (cur+.12)*m1.getBoundingClientRect().width);}
-  if(e.key==='ArrowLeft'||e.key==='ArrowDown'){dawnTo(m1.getBoundingClientRect().left + (cur-.12)*m1.getBoundingClientRect().width);}
+  var step = (k==='ArrowRight'||k==='ArrowUp') ? .12 : -.12;
+  dawnTo(m1.getBoundingClientRect().left + (cur+step)*m1.getBoundingClientRect().width);
 });
 /* MOVEMENT II: tap to plant — seed falls, soil answers, sprout rises, sunflower blooms. Cap: 6. */
 var m2 = document.getElementById('m2'), yard = document.getElementById('plantings'), planted = 0, PLANT_CAP = 3;
 var SF = '<svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg>';
 /* two grown sunflowers already stand in the garden */
-[[20,'sw1'],[61,'sw2']].forEach(function(cfg){
-  var b = document.createElement('div');
-  b.className = 'plant big ' + cfg[1];
-  b.style.left = 'calc(' + cfg[0] + '% - 75px)';
-  b.innerHTML = SF;
-  yard.appendChild(b);
+/* the two grown sunflowers now live in the markup (no-JS fallback shows the real garden) */
+var pd = null;   /* Astra #5: tap intent tracking — scroll/cancel must not consume a plant */
+m2.addEventListener('pointerdown', function(e){ pd = {x:e.clientX, y:e.clientY, t:Date.now()}; });
+m2.addEventListener('pointerup', function(e){
+  if(!pd) return;
+  var dx = e.clientX - pd.x, dy = e.clientY - pd.y, dt = Date.now() - pd.t;
+  pd = null;
+  var moved = Math.sqrt(dx*dx + dy*dy);
+  if(moved > 14 || dt > 600) return;   /* a scroll/fling, not a tap */
+  plantRitual(e);
 });
-m2.addEventListener('pointerdown', plantRitual);
+m2.addEventListener('pointercancel', function(){ pd = null; });
 /* synthetic click pipelines that never fire pointerdown still get to play (debounced) */
 m2.addEventListener('click', function(e){
   plantRitual(e);   /* debounced — no-ops if the pointerdown path just ran */
@@ -523,7 +539,7 @@ function sprouts(now){
   var y = document.getElementById('sfyard');
   /* the same five flowers as m2 - same art, same sizes: two grown (150x280, sw1/sw2),
      three small at m2's exact bloom scales 62/50/40. smalls grow in across the seasons. */
-  var fam = [['big sw1',18,75],['s1',40,60],['s2',52,60],['big sw2',66,75],['s3',86,60]];
+  var fam = [['s1',40,60],['s2',52,60],['s3',86,60]];  /* bigs live in markup now */
   fam.forEach(function(f){
     var d = document.createElement('div');
     d.className = 'sf ' + f[0];
@@ -553,6 +569,7 @@ document.querySelectorAll('#m5 .bud').forEach(function(b){
     b.classList.add('opened');
     b.querySelector('.tulipb').classList.add('open');
     b.setAttribute('aria-expanded','true');
+    b.setAttribute('aria-label', b.dataset.color==='pink' ? 'The pink tulip is in bloom; its message is showing.' : 'The blue tulip is in bloom; its message is showing.');
     opened++;
     if(opened===2){
       var cap = document.getElementById('tulipcap');
