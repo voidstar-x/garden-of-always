@@ -39,10 +39,6 @@ html{font-size:16px}
 /* — Sunflower scale-up for portrait (inline widths are desktop-tuned) — */
 .sfart{transform-origin:50% 100%}
 @media (max-width:480px){
-          #m3 svg.sfart[style*="width:130px"]{width:150px!important;left:8%!important}
-  #m3 svg.sfart[style*="width:120px"]{width:138px!important;left:72%!important}
-  #m3 svg.sfart[style*="width:56px"]{width:76px!important;left:24%!important}
-  #m3 svg.sfart[style*="width:50px"]{width:66px!important;left:60%!important}
   #m3 .sfart{bottom:6vh}
   }
 /* — Tap targets ≥44px & thumb-reachable — */
@@ -72,7 +68,7 @@ html:not(.js) .risecard .l1,
 html:not(.js) .risecard .l2{opacity:1!important;transform:none!important}
 /* === ALWAYS-ALIVE ART LAYER (v2): ambient life + real illustration, safe on old Safari === */
 @keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
-@keyframes sway{0%,100%{transform:rotate(-2.4deg)}50%{transform:rotate(2.4deg)}}
+
 @keyframes sway2{0%,100%{transform:rotate(2deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-3px)}}
 #m1 .st{animation:twinkle 3.6s ease-in-out infinite}
 #m1 .st:nth-child(3n){animation-duration:5.2s;animation-delay:.7s}
@@ -171,13 +167,15 @@ html{scroll-behavior:auto}
 #m2 .plant.big{width:150px;height:280px;transform:none;transition:none;filter:drop-shadow(0 3px 8px rgba(45,52,54,.28))}
 #m2 .plant.big.sw1{animation:sway 5.4s ease-in-out infinite alternate}
 #m2 .plant.big.sw2{animation:sway 6.3s ease-in-out .8s infinite alternate}
-@keyframes sway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.2deg)}}
+
 #m2 .plant svg{width:100%;height:100%;display:block}
 #m2 .seed{position:absolute;bottom:calc(9vh - 2px);width:10px;height:13px;border-radius:45% 55% 50% 50%;background:#4A3A26;box-shadow:inset 0 -2px 0 rgba(0,0,0,.25);pointer-events:none;z-index:2}
 #m2 .sprout{position:absolute;bottom:calc(9vh - 2px);width:18px;height:30px;transform-origin:50% 100%;transform:scaleY(.35);transition:transform .5s cubic-bezier(.3,1.2,.5,1);pointer-events:none;z-index:2}
 #m2 .sprout.up{transform:scaleY(1)}
 #m2 .sprout::before{content:'';position:absolute;left:7px;top:4px;width:4px;height:26px;border-radius:3px;background:#6B8A5E}
-#m2 .sprout::after{content:'';position:absolute;left:-4px;top:9px;width:12px;height:7px;border-radius:60% 0 60% 0;background:#7DA06F;transform:rotate(-24deg)}25%{opacity:.85}100%{transform:scale(1.7);opacity:0}}
+#m2 .sprout::after{content:'';position:absolute;left:-4px;top:9px;width:12px;height:7px;border-radius:60% 0 60% 0;background:#7DA06F;transform:rotate(-24deg)}
+#m2 .poof{position:absolute;bottom:calc(9vh - 8px);width:60px;height:18px;pointer-events:none;background:radial-gradient(circle at 18% 70%,#6B5236 0 22%,transparent 24%),radial-gradient(circle at 50% 30%,#7A5F40 0 20%,transparent 22%),radial-gradient(circle at 80% 66%,#6B5236 0 20%,transparent 22%),radial-gradient(circle at 36% 76%,#5F4A31 0 16%,transparent 18%),radial-gradient(circle at 64% 78%,#5F4A31 0 15%,transparent 17%);animation:poof .9s ease-out forwards}
+@keyframes poof{0%{transform:scale(.55);opacity:.95}100%{transform:scale(1.7) translateY(-8px);opacity:0}}
 #m2 .tapcard{position:relative;z-index:2;background:rgba(251,247,240,.9);border:1px solid rgba(58,63,74,.25);padding:1.1rem 1.7rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.75}
 #m2 .p2{display:none}
 #m2.full .p1{display:none}
@@ -196,15 +194,15 @@ html{scroll-behavior:auto}
 #m3 .umbrella.u2{background:var(--blush);width:56px;height:56px}
 #m3 .rainlab{position:absolute;top:9vh;left:0;right:0}
 #m3 .ray{position:absolute;inset:0;background:conic-gradient(from 200deg at 78% 12%,rgba(242,193,78,.22) 0 8%,transparent 8% 100%)}
-#m3 .sf{position:absolute;bottom:9vh;width:90px;height:190px}
+#m3 .sf{position:absolute;bottom:9vh;width:90px;height:190px}#m3 .sf:nth-child(2){animation-delay:-2.1s}#m3 .sf:nth-child(3){animation-delay:-1.3s}#m3 .sf:nth-child(4){animation-delay:-3.4s}
 #m3 .sf.big{width:110px;height:230px;animation:sway 5.5s ease-in-out infinite;transform-origin:50% 100%}
-#m3 .sf.small{width:52px;height:100px}
+#m3 .sf.small{width:52px;height:100px;animation:sway2 6.8s ease-in-out infinite;transform-origin:50% 100%}
 @keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg)}}
 #m3 .sf .st{transform-origin:50% 100%;animation:petal 9s ease-in-out infinite alternate}
 @keyframes petal{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
 #m3 .leafdrift{position:absolute;width:16px;height:11px;border-radius:60% 40% 55% 45%;background:var(--amber);animation:drift 7s linear infinite}
 @keyframes drift{from{transform:translate(-12vw,-6vh) rotate(0)}to{transform:translate(112vw,12vh) rotate(340deg)}}
---x:0}#m3 .sealab{position:absolute;bottom:3.2vh;left:0;right:0;font-family:var(--sans);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;opacity:.55}
+#m3 .sealab{position:absolute;bottom:3.2vh;left:0;right:0;font-family:var(--sans);font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;opacity:.55}
 /* MOVEMENT IV: WINTER */
 #m4{background:#2C3A55}
 #m4 .bluehour{position:absolute;inset:0;background:linear-gradient(#2C3A55,#3E4E6E 62%,#54689A)}
@@ -339,10 +337,6 @@ html{scroll-behavior:auto}
     <p class="rainlab line rv">Frolicking in the sun</p>
   </div>
   <div id="sfyard" aria-hidden="true"></div>
-  <svg class="sfart" style="left:12%;width:130px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,82" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M50,140 Q28,130 26,108 Q46,116 50,140" fill="#5F7A57"/><path d="M50,122 Q72,112 74,90 Q54,98 50,122" fill="#5F7A57"/><g><circle cx="50" cy="54" r="19" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="26" rx="9" ry="15"/><ellipse cx="50" cy="82" rx="9" ry="15"/><ellipse cx="23" cy="54" rx="15" ry="9"/><ellipse cx="77" cy="54" rx="15" ry="9"/><ellipse cx="30" cy="33" rx="8" ry="13" transform="rotate(-45 30 33)"/><ellipse cx="70" cy="33" rx="8" ry="13" transform="rotate(45 70 33)"/><ellipse cx="30" cy="75" rx="8" ry="13" transform="rotate(45 30 75)"/><ellipse cx="70" cy="75" rx="8" ry="13" transform="rotate(-45 70 75)"/></g><circle cx="50" cy="54" r="11" fill="#8A6420"/></g></svg>
-  <svg class="sfart s2" style="left:80%;width:120px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,84" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M50,144 Q30,134 28,114 Q48,122 50,144" fill="#5F7A57"/><g><circle cx="50" cy="56" r="17" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="30" rx="8" ry="13"/><ellipse cx="50" cy="82" rx="8" ry="13"/><ellipse cx="25" cy="56" rx="13" ry="8"/><ellipse cx="75" cy="56" rx="13" ry="8"/><ellipse cx="33" cy="38" rx="7" ry="11" transform="rotate(-45 33 38)"/><ellipse cx="67" cy="38" rx="7" ry="11" transform="rotate(45 67 38)"/><ellipse cx="33" cy="74" rx="7" ry="11" transform="rotate(45 33 74)"/><ellipse cx="67" cy="74" rx="7" ry="11" transform="rotate(-45 67 74)"/></g><circle cx="50" cy="56" r="10" fill="#8A6420"/></g></svg>
-  <svg class="sfart s3" style="left:26%;width:56px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,120" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M50,168 Q34,160 32,144 Q48,152 50,168" fill="#5F7A57"/><g><circle cx="50" cy="98" r="12" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="80" rx="6" ry="9"/><ellipse cx="50" cy="116" rx="6" ry="9"/><ellipse cx="33" cy="98" rx="9" ry="6"/><ellipse cx="67" cy="98" rx="9" ry="6"/></g><circle cx="50" cy="98" r="7" fill="#8A6420"/></g></svg>
-  <svg class="sfart s2" style="left:62%;width:50px;height:auto" viewBox="0 0 100 190" aria-hidden="true"><path d="M50,190 L50,126" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M50,172 Q36,164 34,150 Q50,158 50,172" fill="#5F7A57"/><g><circle cx="50" cy="104" r="11" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="50" cy="87" rx="6" ry="9"/><ellipse cx="50" cy="121" rx="6" ry="9"/><ellipse cx="34" cy="104" rx="9" ry="6"/><ellipse cx="66" cy="104" rx="9" ry="6"/></g><circle cx="50" cy="104" r="6" fill="#8A6420"/></g></svg>
   <p class="sealab" id="sealab">the seasons turn, the sunflowers return</p>
 </section>
 <section id="m4" class="scene" aria-label="Movement IV: winter frost over the sleeping garden, blue hour.">
@@ -520,7 +514,7 @@ function sprouts(now){
   var y = document.getElementById('sfyard');
   var big = '<div class="sf big" style="left:L%"><svg viewBox="0 0 110 230"><path d="M55,230 L55,70" stroke="#5F7A57" stroke-width="6" fill="none"/><path d="M55,150 Q25,140 20,112 Q52,124 55,150" fill="#5F7A57"/><path d="M55,128 Q85,118 90,90 Q58,102 55,128" fill="#5F7A57"/><g class="st"><circle cx="55" cy="42" r="27" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="55" cy="9" rx="9" ry="15"/><ellipse cx="55" cy="75" rx="9" ry="15"/><ellipse cx="22" cy="42" rx="15" ry="9"/><ellipse cx="88" cy="42" rx="15" ry="9"/><ellipse cx="32" cy="19" rx="9" ry="13" transform="rotate(-45 32 19)"/><ellipse cx="78" cy="19" rx="9" ry="13" transform="rotate(45 78 19)"/><ellipse cx="32" cy="65" rx="9" ry="13" transform="rotate(45 32 65)"/><ellipse cx="78" cy="65" rx="9" ry="13" transform="rotate(-45 78 65)"/></g><circle cx="55" cy="42" r="14" fill="#5F7A57"/></g></svg></div>';
   var small = '<div class="sf small" style="left:L%"><svg viewBox="0 0 52 100"><path d="M26,100 L26,42" stroke="#5F7A57" stroke-width="4" fill="none"/><path d="M26,70 Q12,64 10,50 Q24,56 26,70" fill="#5F7A57"/><circle cx="26" cy="28" r="13" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="26" cy="10" rx="5" ry="9"/><ellipse cx="26" cy="46" rx="5" ry="9"/><ellipse cx="8" cy="28" rx="9" ry="5"/><ellipse cx="44" cy="28" rx="9" ry="5"/></g><circle cx="26" cy="28" r="6" fill="#5F7A57"/></svg></div>';
-  var spots = [['18',big],['40',big],['58',small],['70',small]];
+  var spots = [['20',big],['62',big],['44',small],['82',small]];
   spots.forEach(function(s,i){
     var d = document.createElement('div');
     d.innerHTML = s[1].replace('L%', s[0]+'%');
