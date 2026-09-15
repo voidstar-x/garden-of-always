@@ -183,12 +183,12 @@ html{scroll-behavior:auto}
 @keyframes swapin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 /* MOVEMENT III: SEASONS */
 #m3{background:var(--babyblue)}
-#m3 .season{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+#m3 .season{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;pointer-events:none;z-index:1}
 #m3 .season.on{opacity:1}
-#m3 .s-spring{background:var(--babyblue)}
-#m3 .s-summer{background:#FBEBC8}
-#m3 .s-autumn{background:#E9D9C4}
-#m3 .rain{position:absolute;top:0;left:0;width:120%;height:100%;background-image:repeating-linear-gradient(105deg,rgba(127,168,201,.55) 0 1.5px,transparent 1.5px 26px);animation:rain 1.1s linear infinite}
+#m3 .s-spring{background:rgba(191,217,234,.45)}
+#m3 .s-summer{background:rgba(251,235,200,.5)}
+#m3 .s-autumn{background:rgba(233,217,196,.5)}
+#m3 .field{position:absolute;bottom:0;left:0;right:0;height:34vh;min-height:150px;background:var(--green)}#m3 .soil{position:absolute;bottom:0;left:0;right:0;height:9vh;min-height:44px;background:var(--leaf)}#m3 .rain{position:absolute;top:0;left:0;width:120%;height:100%;background-image:repeating-linear-gradient(105deg,rgba(127,168,201,.55) 0 1.5px,transparent 1.5px 26px);animation:rain 1.1s linear infinite}
 @keyframes rain{to{transform:translateY(60px)}}
 #m3 .umbrella{position:absolute;bottom:36vh;width:70px;height:70px;border-radius:70px 70px 0 0;border:2.5px solid var(--ink);background:var(--babyblue)}
 #m3 .umbrella.u2{background:var(--blush);width:56px;height:56px}
@@ -322,7 +322,9 @@ html{scroll-behavior:auto}
   
   <p class="sealab rv d1">a garden takes root where you tap</p>
 </section>
-<section id="m3" class="scene" aria-label="Movement III: the seasons pass. Spring rain, then summer gold, then autumn wind. The two tall sunflowers stand through the seasons while three smaller blooms grow up beside them.">
+<section id="m3" class="scene" aria-label="Movement III: the seasons pass over one garden. Spring rain, then summer gold, then autumn wind. The two tall sunflowers stand through the seasons while three smaller blooms grow up beside them.">
+  <div class="field" aria-hidden="true"></div>
+  <div class="soil" aria-hidden="true"></div>
   <div class="season s-spring on">
     <div class="rain" aria-hidden="true"></div>
     <div class="umbrella" style="left:16%" aria-hidden="true"></div>
@@ -507,6 +509,13 @@ function seasons(){
       m3.querySelectorAll('.season').forEach(function(s){s.classList.remove('on');});
       m3.querySelector('.'+step[0]).classList.add('on');
       lab.textContent = step[1];
+      if(!RM && step[0]==='s-autumn'){
+        for(var k=0;k<6;k++){
+          var lf=document.createElement('div'); lf.className='leafdrift';
+          lf.style.cssText='left:'+(8+Math.random()*84)+'%;bottom:'+(30+Math.random()*32)+'vh;animation-delay:'+(-Math.random()*7).toFixed(2)+'s';
+          m3.appendChild(lf);
+        }
+      }
     }, 6500*(i+1));
   });
 }
