@@ -113,6 +113,7 @@ html{font-size:16px}
 #m2 .field{height:44vh;min-height:220px}
 #m2 .soil{height:11vh;min-height:64px}
 #m5 .frostbed{height:46vh;min-height:240px}
+  .sfyard5{height:250px;bottom:10px}
 #m5 .bud{width:118px;height:210px;bottom:calc(46vh - 12px)}
 #m5 .bud .say{bottom:118%;padding:1rem 1.1rem}
 #m1 svg .st{filter:none}
@@ -214,10 +215,26 @@ html:not(.js) #m3 .s-summer,html:not(.js) #m3 .s-autumn{display:none}
 #m4 .sleeplab{position:absolute;bottom:3.4vh;left:0;right:0;font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;opacity:.5;color:#C7CEDD}
 /* MOVEMENT V: TULIPS */
 #m5{background:linear-gradient(180deg,#33415E 0%,#33415E 72%,#3E4E6E 100%);cursor:default}
-#m5 .frostbed{position:absolute;bottom:0;left:0;right:0;height:38vh;min-height:170px;background:var(--green);filter:saturate(.55) brightness(.72)}
+#m5 /* — m5: the five-sunflower family stands in the frost; the tulips bloom amidst them — */
+.sfyard5{position:absolute;left:0;right:0;bottom:14px;height:290px;pointer-events:none;z-index:1}
+.sfyard5 .sf{position:absolute;bottom:0}
+.sfyard5 .sf:nth-child(2){bottom:-7px}
+.sfyard5 .sf:nth-child(3){bottom:-4px}
+.sfyard5 .sf:nth-child(4){bottom:-9px}
+.sfyard5 .sf:nth-child(5){bottom:-3px}
+.sfyard5 .sf svg{width:100%;height:100%;display:block}
+.sfyard5 .sf.big{width:150px;height:280px}
+.sfyard5 .sf.s1{width:93px;height:174px}
+.sfyard5 .sf.s2{width:75px;height:140px}
+.sfyard5 .sf.s3{width:60px;height:112px}
+.sfyard5 .sf{filter:saturate(.42) brightness(.94)}
+.sfyard5 .sf.big.sw1{animation:sway 7.5s ease-in-out infinite alternate}
+.sfyard5 .sf.big.sw2{animation:sway 8.6s ease-in-out .9s infinite alternate}
+@media (prefers-reduced-motion:reduce){.sfyard5 .sf{animation:none!important}}
+.frostbed{position:absolute;bottom:0;left:0;right:0;height:38vh;min-height:170px;background:var(--green);filter:saturate(.55) brightness(.72)}
 #m5 .frostbed::before{content:'';position:absolute;inset:0;background:rgba(191,217,234,.28)}
 #m5 .frostbed::after{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:rgba(251,251,255,.65)}
-#m5 .bud{position:absolute;bottom:calc(38vh - 10px);width:96px;height:170px;cursor:pointer;transition:transform .3s ease}
+#m5 .bud{position:absolute;bottom:calc(38vh - 10px);width:96px;height:170px;cursor:pointer;transition:transform .3s ease;z-index:2}
 #m5 .bud:hover{transform:scale(1.05)}
 #m5 .bud svg{width:100%;height:100%}
 #m5 .bud .tulipb{transform-origin:50% 78%;transition:transform 1.7s cubic-bezier(.3,1.1,.3,1)}
@@ -319,8 +336,8 @@ html:not(.js) #m3 .s-summer,html:not(.js) #m3 .s-autumn{display:none}
   <div class="field"></div>
   <div class="soil"></div>
   <div id="plantings">
-    <div class="plant big sw1" style="left:calc(20% - 75px)"></div>
-    <div class="plant big sw2" style="left:calc(61% - 75px)"></div>
+    <div class="plant big sw1" style="left:calc(20% - 75px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+    <div class="plant big sw2" style="left:calc(61% - 75px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
   </div>
 
   <button type="button" class="tapcard rv"><span class="p1">tap the garden to plant the first sunflower</span><span class="p2">the garden is planted · keep scrolling</span></button>
@@ -345,8 +362,8 @@ html:not(.js) #m3 .s-summer,html:not(.js) #m3 .s-autumn{display:none}
     <p class="rainlab line rv">Frolicking in the sun</p>
   </div>
   <div id="sfyard" aria-hidden="true">
-    <div class="sf big sw1" style="left:calc(18% - 75px)"></div>
-    <div class="sf big sw2" style="left:calc(66% - 75px)"></div>
+    <div class="sf big sw1" style="left:calc(18% - 75px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+    <div class="sf big sw2" style="left:calc(66% - 75px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
   </div>
   <p class="sealab" id="sealab">the seasons turn, the sunflowers return</p>
 </section>
@@ -359,8 +376,15 @@ html:not(.js) #m3 .s-summer,html:not(.js) #m3 .s-autumn{display:none}
   <h1 class="line rv" style="color:var(--babyblue)">winter keeps the garden soft</h1>
   <p class="sleeplab">the sunflowers sleep, the soil holds them</p>
 </section>
-<section id="m5" class="scene" aria-label="Movement V: December tulips bloom through the frost. Tap each bud to open it. The pink tulip and the blue tulip each carry a line for her.">
+<section id="m5" class="scene" aria-label="Movement V: December tulips bloom amidst the five standing sunflowers. Tap each bud to open it. The pink tulip and the blue tulip each carry a line for her.">
   <div class="frostbed" aria-hidden="true"></div>
+  <div class="sfyard5" aria-hidden="true">
+    <div class="sf big sw1" style="left:calc(14% - 75px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+    <div class="sf big sw2" style="left:calc(68% - 75px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+    <div class="sf s1" style="left:calc(33% - 60px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+    <div class="sf s2" style="left:calc(60% - 60px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+    <div class="sf s3" style="left:calc(79% - 60px)"><svg viewBox="0 0 120 220" aria-hidden="true"><path d="M60,220 L60,70" stroke="#5F7A57" stroke-width="7" fill="none"/><path d="M60,150 Q28,140 22,112 Q56,124 60,150" fill="#5F7A57"/><path d="M60,128 Q92,118 98,90 Q64,102 60,128" fill="#5F7A57"/><circle cx="60" cy="46" r="30" fill="#E09B2D"/><g fill="#F2C14E"><ellipse cx="60" cy="10" rx="10" ry="17"/><ellipse cx="60" cy="82" rx="10" ry="17"/><ellipse cx="24" cy="46" rx="17" ry="10"/><ellipse cx="96" cy="46" rx="17" ry="10"/><ellipse cx="35" cy="21" rx="10" ry="15" transform="rotate(-45 35 21)"/><ellipse cx="85" cy="21" rx="10" ry="15" transform="rotate(45 85 21)"/><ellipse cx="35" cy="71" rx="10" ry="15" transform="rotate(45 35 71)"/><ellipse cx="85" cy="71" rx="10" ry="15" transform="rotate(-45 85 71)"/></g><circle cx="60" cy="46" r="16" fill="#5F7A57"/></svg></div>
+  </div>
   <div class="bud" style="left:26%" data-color="pink" role="button" tabindex="0" aria-label="A closed pink tulip bud. Tap to open it.">
     <svg viewBox="0 0 96 170" aria-hidden="true"><path d="M48,170 L48,64" stroke="#5F7A57" stroke-width="5" fill="none"/><path d="M48,110 Q26,102 24,84 Q44,90 48,110" fill="#5F7A57"/><path d="M48,96 Q70,88 72,70 Q52,76 48,96" fill="#5F7A57"/><g class="tulipb"><path d="M48,72 Q22,60 26,24 Q38,40 48,44 Q58,40 70,24 Q74,60 48,72 Z" fill="#F6C9D0"/><path d="M48,72 Q36,58 38,26 Q46,42 48,46 Z" fill="#E8A0B4"/></g><g class="budcase" fill="#31405C"><path d="M40,44 Q48,40 56,44 L54,66 Q48,70 42,66 Z"/><path d="M41,68 Q48,64 55,68 L53,74 Q48,77 43,74 Z" opacity=".8"/></g></svg>
     <p class="say">Pink, for every soft thing you are.</p>
